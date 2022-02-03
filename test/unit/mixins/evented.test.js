@@ -574,7 +574,7 @@ QUnit.test('off() can remove a listener from an array of events on a different t
 
 QUnit.test('Removes DomData on dispose', function(assert) {
   const el_ = Dom.createEl('div');
-  const eventBusEl_ = Dom.createEl('span', {className: 'vjs-event-bus'});
+  const eventBusEl_ = Dom.createEl('span', {className: 'dk-vjs-event-bus'});
   const target = evented({el_, eventBusEl_}, {eventBusKey: 'eventBusEl_'});
 
   assert.equal(DomData.get(eventBusEl_).handlers.dispose.length, 1, 'event bus has dispose handler');

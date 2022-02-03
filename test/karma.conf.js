@@ -42,7 +42,7 @@ module.exports = function(config) {
     // make sinon be available via karma's server but don't include it directly
     { pattern: 'node_modules/sinon/pkg/sinon.js', included: false, served: true },
     'test/sinon.js',
-    'dist/video-js.css',
+    'dist/dk-video-js.css',
     'test/dist/bundle.js',
     'test/dist/browserify.js',
     'test/dist/webpack.js'

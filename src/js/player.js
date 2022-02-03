@@ -256,17 +256,17 @@ const BREAKPOINT_ORDER = [
 
 const BREAKPOINT_CLASSES = {};
 
-// grep: vjs-layout-tiny
-// grep: vjs-layout-x-small
-// grep: vjs-layout-small
-// grep: vjs-layout-medium
-// grep: vjs-layout-large
-// grep: vjs-layout-x-large
-// grep: vjs-layout-huge
+// grep: dk-vjs-layout-tiny
+// grep: dk-vjs-layout-x-small
+// grep: dk-vjs-layout-small
+// grep: dk-vjs-layout-medium
+// grep: dk-vjs-layout-large
+// grep: dk-vjs-layout-x-large
+// grep: dk-vjs-layout-huge
 BREAKPOINT_ORDER.forEach(k => {
   const v = k.charAt(0) === 'x' ? `x-${k.substring(1)}` : k;
 
-  BREAKPOINT_CLASSES[k] = `vjs-layout-${v}`;
+  BREAKPOINT_CLASSES[k] = `dk-vjs-layout-${v}`;
 });
 
 const DEFAULT_BREAKPOINTS = {
@@ -520,9 +520,9 @@ class Player extends Component {
     // Update controls className. Can't do this when the controls are initially
     // set because the element doesn't exist yet.
     if (this.controls()) {
-      this.addClass('vjs-controls-enabled');
+      this.addClass('dk-vjs-controls-enabled');
     } else {
-      this.addClass('vjs-controls-disabled');
+      this.addClass('dk-vjs-controls-disabled');
     }
 
     // Set ARIA label and region role depending on player type
@@ -534,11 +534,11 @@ class Player extends Component {
     }
 
     if (this.isAudio()) {
-      this.addClass('vjs-audio');
+      this.addClass('dk-vjs-audio');
     }
 
     if (this.flexNotSupported_()) {
-      this.addClass('vjs-no-flex');
+      this.addClass('dk-vjs-no-flex');
     }
 
     // TODO: Make this smarter. Toggle user state between touching/mousing
@@ -546,12 +546,12 @@ class Player extends Component {
     // TODO: Make this check be performed again when the window switches between monitors
     // (See https://github.com/videojs/video.js/issues/5683)
     if (browser.TOUCH_ENABLED) {
-      this.addClass('vjs-touch-enabled');
+      this.addClass('dk-vjs-touch-enabled');
     }
 
     // iOS Safari has broken hover handling
     if (!browser.IS_IOS) {
-      this.addClass('vjs-workinghover');
+      this.addClass('dk-vjs-workinghover');
     }
 
     // Make player easily findable by ID
@@ -560,7 +560,7 @@ class Player extends Component {
     // Add a major version class to aid css in plugins
     const majorVersion = version.split('.')[0];
 
-    this.addClass(`vjs-v${majorVersion}`);
+    this.addClass(`dk-vjs-v${majorVersion}`);
 
     // When the player is first initialized, trigger activity so components
     // like the control bar show themselves if needed
@@ -658,8 +658,8 @@ class Player extends Component {
   createEl() {
     let tag = this.tag;
     let el;
-    let playerElIngest = this.playerElIngest_ = tag.parentNode && tag.parentNode.hasAttribute && tag.parentNode.hasAttribute('data-vjs-player');
-    const divEmbed = this.tag.tagName.toLowerCase() === 'video-js';
+    let playerElIngest = this.playerElIngest_ = tag.parentNode && tag.parentNode.hasAttribute && tag.parentNode.hasAttribute('data-dk-vjs-player');
+    const divEmbed = this.tag.tagName.toLowerCase() === 'dk-video-js';
 
     if (playerElIngest) {
       el = this.el_ = tag.parentNode;
@@ -678,14 +678,14 @@ class Player extends Component {
         tag.appendChild(el.firstChild);
       }
 
-      if (!Dom.hasClass(el, 'video-js')) {
-        Dom.addClass(el, 'video-js');
+      if (!Dom.hasClass(el, 'dk-video-js')) {
+        Dom.addClass(el, 'dk-video-js');
       }
 
       el.appendChild(tag);
 
       playerElIngest = this.playerElIngest_ = el;
-      // move properties over from our custom `video-js` element
+      // move properties over from our custom `dk-video-js` element
       // to our new `video` element. This will move things like
       // `src` or `controls` that were set via js before the player
       // was initialized.
@@ -726,7 +726,7 @@ class Player extends Component {
     Object.getOwnPropertyNames(attrs).forEach(function(attr) {
       // don't copy over the class attribute to the player element when we're in a div embed
       // the class is already set up properly in the divEmbed case
-      // and we want to make sure that the `video-js` class doesn't get lost
+      // and we want to make sure that the `dk-video-js` class doesn't get lost
       if (!(divEmbed && attr === 'class')) {
         el.setAttribute(attr, attrs[attr]);
       }
@@ -737,23 +737,23 @@ class Player extends Component {
     });
 
     // Update tag id/class for use as HTML5 playback tech
-    // Might think we should do this after embedding in container so .vjs-tech class
-    // doesn't flash 100% width/height, but class only applies with .video-js parent
+    // Might think we should do this after embedding in container so .dk-vjs-tech class
+    // doesn't flash 100% width/height, but class only applies with .dk-video-js parent
     tag.playerId = tag.id;
     tag.id += '_html5_api';
-    tag.className = 'vjs-tech';
+    tag.className = 'dk-vjs-tech';
 
     // Make player findable on elements
     tag.player = el.player = this;
     // Default state of video is paused
-    this.addClass('vjs-paused');
+    this.addClass('dk-vjs-paused');
 
     // Add a style element in the player that we'll use to set the width/height
     // of the player in a way that's still overrideable by CSS, just like the
     // video element
     if (window.VIDEOJS_NO_DYNAMIC_STYLE !== true) {
-      this.styleEl_ = stylesheet.createStyleElement('vjs-styles-dimensions');
-      const defaultsStyleEl = Dom.$('.vjs-styles-defaults');
+      this.styleEl_ = stylesheet.createStyleElement('dk-vjs-styles-dimensions');
+      const defaultsStyleEl = Dom.$('.dk-vjs-styles-defaults');
       const head = Dom.$('head');
 
       head.insertBefore(this.styleEl_, defaultsStyleEl ? defaultsStyleEl.nextSibling : head.firstChild);
@@ -778,7 +778,7 @@ class Player extends Component {
     for (let i = 0; i < links.length; i++) {
       const linkEl = links.item(i);
 
-      Dom.addClass(linkEl, 'vjs-hidden');
+      Dom.addClass(linkEl, 'dk-vjs-hidden');
       linkEl.setAttribute('hidden', 'hidden');
     }
 
@@ -908,7 +908,7 @@ class Player extends Component {
   }
 
   /**
-   * A getter/setter/toggler for the vjs-fluid `className` on the `Player`.
+   * A getter/setter/toggler for the dk-vjs-fluid `className` on the `Player`.
    *
    * Turning this on will turn off fill mode.
    *
@@ -932,20 +932,20 @@ class Player extends Component {
       this.off(['playerreset', 'resize'], this.boundUpdateStyleEl_);
     }
     if (bool) {
-      this.addClass('vjs-fluid');
+      this.addClass('dk-vjs-fluid');
       this.fill(false);
       addEventedCallback(this, () => {
         this.on(['playerreset', 'resize'], this.boundUpdateStyleEl_);
       });
     } else {
-      this.removeClass('vjs-fluid');
+      this.removeClass('dk-vjs-fluid');
     }
 
     this.updateStyleEl_();
   }
 
   /**
-   * A getter/setter/toggler for the vjs-fill `className` on the `Player`.
+   * A getter/setter/toggler for the dk-vjs-fill `className` on the `Player`.
    *
    * Turning this on will turn off fluid mode.
    *
@@ -966,10 +966,10 @@ class Player extends Component {
     this.fill_ = !!bool;
 
     if (bool) {
-      this.addClass('vjs-fill');
+      this.addClass('dk-vjs-fill');
       this.fluid(false);
     } else {
-      this.removeClass('vjs-fill');
+      this.removeClass('dk-vjs-fill');
     }
   }
 
@@ -1091,7 +1091,7 @@ class Player extends Component {
         height: ${height}px;
       }
 
-      .${idClass}.vjs-fluid {
+      .${idClass}.dk-vjs-fluid {
         padding-top: ${ratioMultiplier * 100}%;
       }
     `);
@@ -1386,8 +1386,8 @@ class Player extends Component {
   handleTechLoadStart_() {
     // TODO: Update to use `emptied` event instead. See #1277.
 
-    this.removeClass('vjs-ended');
-    this.removeClass('vjs-seeking');
+    this.removeClass('dk-vjs-ended');
+    this.removeClass('dk-vjs-seeking');
 
     // reset the error state
     this.error(null);
@@ -1630,7 +1630,7 @@ class Player extends Component {
   }
 
   /**
-   * Add/remove the vjs-has-started class
+   * Add/remove the dk-vjs-has-started class
    *
    * @fires Player#firstplay
    *
@@ -1654,10 +1654,10 @@ class Player extends Component {
     this.hasStarted_ = request;
 
     if (this.hasStarted_) {
-      this.addClass('vjs-has-started');
+      this.addClass('dk-vjs-has-started');
       this.trigger('firstplay');
     } else {
-      this.removeClass('vjs-has-started');
+      this.removeClass('dk-vjs-has-started');
     }
   }
 
@@ -1670,9 +1670,9 @@ class Player extends Component {
    * @private
    */
   handleTechPlay_() {
-    this.removeClass('vjs-ended');
-    this.removeClass('vjs-paused');
-    this.addClass('vjs-playing');
+    this.removeClass('dk-vjs-ended');
+    this.removeClass('dk-vjs-paused');
+    this.addClass('dk-vjs-playing');
 
     // hide the poster when the user hits play
     this.hasStarted(true);
@@ -1720,7 +1720,7 @@ class Player extends Component {
    * @private
    */
   handleTechWaiting_() {
-    this.addClass('vjs-waiting');
+    this.addClass('dk-vjs-waiting');
     /**
      * A readyState change on the DOM element has caused playback to stop.
      *
@@ -1734,7 +1734,7 @@ class Player extends Component {
     const timeWhenWaiting = this.currentTime();
     const timeUpdateListener = () => {
       if (timeWhenWaiting !== this.currentTime()) {
-        this.removeClass('vjs-waiting');
+        this.removeClass('dk-vjs-waiting');
         this.off('timeupdate', timeUpdateListener);
       }
     };
@@ -1751,7 +1751,7 @@ class Player extends Component {
    * @private
    */
   handleTechCanPlay_() {
-    this.removeClass('vjs-waiting');
+    this.removeClass('dk-vjs-waiting');
     /**
      * The media has a readyState of HAVE_FUTURE_DATA or greater.
      *
@@ -1769,7 +1769,7 @@ class Player extends Component {
    * @private
    */
   handleTechCanPlayThrough_() {
-    this.removeClass('vjs-waiting');
+    this.removeClass('dk-vjs-waiting');
     /**
      * The media has a readyState of HAVE_ENOUGH_DATA or greater. This means that the
      * entire media file can be played without buffering.
@@ -1788,7 +1788,7 @@ class Player extends Component {
    * @private
    */
   handleTechPlaying_() {
-    this.removeClass('vjs-waiting');
+    this.removeClass('dk-vjs-waiting');
     /**
      * The media is no longer blocked from playback, and has started playing.
      *
@@ -1806,7 +1806,7 @@ class Player extends Component {
    * @private
    */
   handleTechSeeking_() {
-    this.addClass('vjs-seeking');
+    this.addClass('dk-vjs-seeking');
     /**
      * Fired whenever the player is jumping to a new time
      *
@@ -1824,8 +1824,8 @@ class Player extends Component {
    * @private
    */
   handleTechSeeked_() {
-    this.removeClass('vjs-seeking');
-    this.removeClass('vjs-ended');
+    this.removeClass('dk-vjs-seeking');
+    this.removeClass('dk-vjs-ended');
     /**
      * Fired when the player has finished jumping to a new time
      *
@@ -1852,7 +1852,7 @@ class Player extends Component {
       this.currentTime(this.options_.starttime);
     }
 
-    this.addClass('vjs-has-started');
+    this.addClass('dk-vjs-has-started');
     /**
      * Fired the first time a video is played. Not part of the HLS spec, and this is
      * probably not the best implementation yet, so use sparingly. If you don't have a
@@ -1873,8 +1873,8 @@ class Player extends Component {
    * @private
    */
   handleTechPause_() {
-    this.removeClass('vjs-playing');
-    this.addClass('vjs-paused');
+    this.removeClass('dk-vjs-playing');
+    this.addClass('dk-vjs-paused');
     /**
      * Fired whenever the media has been paused
      *
@@ -1892,8 +1892,8 @@ class Player extends Component {
    * @private
    */
   handleTechEnded_() {
-    this.addClass('vjs-ended');
-    this.removeClass('vjs-waiting');
+    this.addClass('dk-vjs-ended');
+    this.removeClass('dk-vjs-waiting');
     if (this.options_.loop) {
       this.currentTime(0);
       this.play();
@@ -1976,7 +1976,7 @@ class Player extends Component {
     // we do not want to toggle fullscreen state
     // when double-clicking inside a control bar or a modal
     const inAllowedEls = Array.prototype.some.call(
-      this.$$('.vjs-control-bar, .vjs-modal-dialog'),
+      this.$$('.dk-vjs-control-bar, .dk-vjs-modal-dialog'),
       el => el.contains(event.target)
     );
 
@@ -2078,9 +2078,9 @@ class Player extends Component {
    */
   toggleFullscreenClass_() {
     if (this.isFullscreen()) {
-      this.addClass('vjs-fullscreen');
+      this.addClass('dk-vjs-fullscreen');
     } else {
-      this.removeClass('vjs-fullscreen');
+      this.removeClass('dk-vjs-fullscreen');
     }
   }
 
@@ -2124,7 +2124,7 @@ class Player extends Component {
   handleTechFullscreenChange_(event, data) {
     if (data) {
       if (data.nativeIOSFullscreen) {
-        this.toggleClass('vjs-ios-native-fs');
+        this.toggleClass('dk-vjs-ios-native-fs');
       }
       this.isFullscreen(data.isFullscreen);
     }
@@ -2139,9 +2139,9 @@ class Player extends Component {
    */
   togglePictureInPictureClass_() {
     if (this.isInPictureInPicture()) {
-      this.addClass('vjs-picture-in-picture');
+      this.addClass('dk-vjs-picture-in-picture');
     } else {
-      this.removeClass('vjs-picture-in-picture');
+      this.removeClass('dk-vjs-picture-in-picture');
     }
   }
 
@@ -2487,9 +2487,9 @@ class Player extends Component {
     this.techCall_('setScrubbing', this.scrubbing_);
 
     if (isScrubbing) {
-      this.addClass('vjs-scrubbing');
+      this.addClass('dk-vjs-scrubbing');
     } else {
-      this.removeClass('vjs-scrubbing');
+      this.removeClass('dk-vjs-scrubbing');
     }
   }
 
@@ -2572,9 +2572,9 @@ class Player extends Component {
       this.cache_.duration = seconds;
 
       if (seconds === Infinity) {
-        this.addClass('vjs-live');
+        this.addClass('dk-vjs-live');
       } else {
-        this.removeClass('vjs-live');
+        this.removeClass('dk-vjs-live');
       }
       if (!isNaN(seconds)) {
         // Do not fire durationchange unless the duration value is known.
@@ -2987,7 +2987,7 @@ class Player extends Component {
     document.documentElement.style.overflow = 'hidden';
 
     // Apply fullscreen styles
-    Dom.addClass(document.body, 'vjs-full-window');
+    Dom.addClass(document.body, 'dk-vjs-full-window');
 
     /**
      * @event Player#enterFullWindow
@@ -3029,7 +3029,7 @@ class Player extends Component {
     document.documentElement.style.overflow = this.docOrigOverflow;
 
     // Remove fullscreen styles
-    Dom.removeClass(document.body, 'vjs-full-window');
+    Dom.removeClass(document.body, 'dk-vjs-full-window');
 
     // Resize the box, controller, and poster to original sizes
     // this.positionAll();
@@ -3874,8 +3874,8 @@ class Player extends Component {
     }
 
     if (this.controls_) {
-      this.removeClass('vjs-controls-disabled');
-      this.addClass('vjs-controls-enabled');
+      this.removeClass('dk-vjs-controls-disabled');
+      this.addClass('dk-vjs-controls-enabled');
       /**
        * @event Player#controlsenabled
        * @type {EventTarget~Event}
@@ -3885,8 +3885,8 @@ class Player extends Component {
         this.addTechControlsListeners_();
       }
     } else {
-      this.removeClass('vjs-controls-enabled');
-      this.addClass('vjs-controls-disabled');
+      this.removeClass('dk-vjs-controls-enabled');
+      this.addClass('dk-vjs-controls-disabled');
       /**
        * @event Player#controlsdisabled
        * @type {EventTarget~Event}
@@ -3930,7 +3930,7 @@ class Player extends Component {
     this.usingNativeControls_ = bool;
 
     if (this.usingNativeControls_) {
-      this.addClass('vjs-using-native-controls');
+      this.addClass('dk-vjs-using-native-controls');
 
       /**
        * player is using the native device controls
@@ -3940,7 +3940,7 @@ class Player extends Component {
        */
       this.trigger('usingnativecontrols');
     } else {
-      this.removeClass('vjs-using-native-controls');
+      this.removeClass('dk-vjs-using-native-controls');
 
       /**
        * player is using the custom HTML controls
@@ -4006,7 +4006,7 @@ class Player extends Component {
     // restoring to default
     if (err === null) {
       this.error_ = err;
-      this.removeClass('vjs-error');
+      this.removeClass('dk-vjs-error');
       if (this.errorDisplay) {
         this.errorDisplay.close();
       }
@@ -4015,8 +4015,8 @@ class Player extends Component {
 
     this.error_ = new MediaError(err);
 
-    // add the vjs-error classname to the player
-    this.addClass('vjs-error');
+    // add the dk-vjs-error classname to the player
+    this.addClass('dk-vjs-error');
 
     // log the name of the error type and any message
     // IE11 logs "[object object]" and required you to expand message to see error object
@@ -4072,8 +4072,8 @@ class Player extends Component {
 
     if (this.userActive_) {
       this.userActivity_ = true;
-      this.removeClass('vjs-user-inactive');
-      this.addClass('vjs-user-active');
+      this.removeClass('dk-vjs-user-inactive');
+      this.addClass('dk-vjs-user-active');
       /**
        * @event Player#useractive
        * @type {EventTarget~Event}
@@ -4098,8 +4098,8 @@ class Player extends Component {
     }
 
     this.userActivity_ = false;
-    this.removeClass('vjs-user-active');
-    this.addClass('vjs-user-inactive');
+    this.removeClass('dk-vjs-user-active');
+    this.addClass('dk-vjs-user-inactive');
     /**
      * @event Player#userinactive
      * @type {EventTarget~Event}
@@ -4572,25 +4572,25 @@ class Player extends Component {
    *         breakpoints.
    *
    * @param  {number} [breakpoints.tiny]
-   *         The maximum width for the "vjs-layout-tiny" class.
+   *         The maximum width for the "dk-vjs-layout-tiny" class.
    *
    * @param  {number} [breakpoints.xsmall]
-   *         The maximum width for the "vjs-layout-x-small" class.
+   *         The maximum width for the "dk-vjs-layout-x-small" class.
    *
    * @param  {number} [breakpoints.small]
-   *         The maximum width for the "vjs-layout-small" class.
+   *         The maximum width for the "dk-vjs-layout-small" class.
    *
    * @param  {number} [breakpoints.medium]
-   *         The maximum width for the "vjs-layout-medium" class.
+   *         The maximum width for the "dk-vjs-layout-medium" class.
    *
    * @param  {number} [breakpoints.large]
-   *         The maximum width for the "vjs-layout-large" class.
+   *         The maximum width for the "dk-vjs-layout-large" class.
    *
    * @param  {number} [breakpoints.xlarge]
-   *         The maximum width for the "vjs-layout-x-large" class.
+   *         The maximum width for the "dk-vjs-layout-x-large" class.
    *
    * @param  {number} [breakpoints.huge]
-   *         The maximum width for the "vjs-layout-huge" class.
+   *         The maximum width for the "dk-vjs-layout-huge" class.
    *
    * @return {Object}
    *         An object mapping breakpoint names to maximum width values.
@@ -4673,8 +4673,8 @@ class Player extends Component {
    * Get the current breakpoint class name.
    *
    * @return {string}
-   *         The matching class name (e.g. `"vjs-layout-tiny"` or
-   *         `"vjs-layout-large"`) for the current breakpoint. Empty string if
+   *         The matching class name (e.g. `"dk-vjs-layout-tiny"` or
+   *         `"dk-vjs-layout-large"`) for the current breakpoint. Empty string if
    *         there is no current breakpoint.
    */
   currentBreakpointClass() {
@@ -4824,10 +4824,10 @@ class Player extends Component {
     const tagOptions = Dom.getAttributes(tag);
     const dataSetup = tagOptions['data-setup'];
 
-    if (Dom.hasClass(tag, 'vjs-fill')) {
+    if (Dom.hasClass(tag, 'dk-vjs-fill')) {
       tagOptions.fill = true;
     }
-    if (Dom.hasClass(tag, 'vjs-fluid')) {
+    if (Dom.hasClass(tag, 'dk-vjs-fluid')) {
       tagOptions.fluid = true;
     }
 
@@ -4951,6 +4951,7 @@ class Player extends Component {
 
 /**
  * Get the {@link VideoTrackList}
+ *
  * @link https://html.spec.whatwg.org/multipage/embedded-content.html#videotracklist
  *
  * @return {VideoTrackList}
@@ -4961,6 +4962,7 @@ class Player extends Component {
 
 /**
  * Get the {@link AudioTrackList}
+ *
  * @link https://html.spec.whatwg.org/multipage/embedded-content.html#audiotracklist
  *
  * @return {AudioTrackList}

@@ -27,15 +27,15 @@ QUnit.test('should be enabled/disabled', function(assert) {
 
   const testClickableComponent = new ClickableComponent(player);
 
-  assert.equal(testClickableComponent.hasClass('vjs-disabled'), false, 'ClickableComponent defaults to enabled');
+  assert.equal(testClickableComponent.hasClass('dk-vjs-disabled'), false, 'ClickableComponent defaults to enabled');
 
   testClickableComponent.disable();
 
-  assert.equal(testClickableComponent.hasClass('vjs-disabled'), true, 'ClickableComponent is disabled');
+  assert.equal(testClickableComponent.hasClass('dk-vjs-disabled'), true, 'ClickableComponent is disabled');
 
   testClickableComponent.enable();
 
-  assert.equal(testClickableComponent.hasClass('vjs-disabled'), false, 'ClickableComponent is enabled');
+  assert.equal(testClickableComponent.hasClass('dk-vjs-disabled'), false, 'ClickableComponent is enabled');
 
   testClickableComponent.dispose();
   player.dispose();
@@ -132,10 +132,10 @@ QUnit.test('language change should localize its text', function(assert) {
   const el = testClickableComponent.createEl();
 
   player.language('en');
-  assert.equal(el.querySelector('.vjs-control-text').textContent, 'Play', 'text localized');
+  assert.equal(el.querySelector('.dk-vjs-control-text').textContent, 'Play', 'text localized');
 
   player.language('es');
-  assert.equal(el.querySelector('.vjs-control-text').textContent, 'Juego', 'text localized');
+  assert.equal(el.querySelector('.dk-vjs-control-text').textContent, 'Juego', 'text localized');
 
   testClickableComponent.dispose();
   player.dispose();

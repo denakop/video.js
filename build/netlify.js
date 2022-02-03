@@ -32,4 +32,4 @@ files
   .concat('dist', 'index.html', 'sandbox', 'docs')
   .forEach((file) => sh.cp('-r', file, path.join(deployDir, file)));
 
-sh.rm(path.join(deployDir, 'dist', `video-js-${pkg.version}.zip`));
+sh.rm(path.join(deployDir, 'dist', `dk-video-js-${pkg.version}.zip`));

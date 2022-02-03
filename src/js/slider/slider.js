@@ -125,7 +125,7 @@ class Slider extends Component {
    */
   createEl(type, props = {}, attributes = {}) {
     // Add the slider element class to all sub classes
-    props.className = props.className + ' vjs-slider';
+    props.className = props.className + ' dk-vjs-slider';
     props = assign({
       tabIndex: 0
     }, props);
@@ -166,7 +166,7 @@ class Slider extends Component {
     }
     Dom.blockTextSelection();
 
-    this.addClass('vjs-sliding');
+    this.addClass('dk-vjs-sliding');
     /**
      * Triggered when the slider is in an active state
      *
@@ -214,7 +214,7 @@ class Slider extends Component {
 
     Dom.unblockTextSelection();
 
-    this.removeClass('vjs-sliding');
+    this.removeClass('dk-vjs-sliding');
     /**
      * Triggered when the slider is no longer in an active state.
      *
@@ -360,9 +360,9 @@ class Slider extends Component {
     this.vertical_ = !!bool;
 
     if (this.vertical_) {
-      this.addClass('vjs-slider-vertical');
+      this.addClass('dk-vjs-slider-vertical');
     } else {
-      this.addClass('vjs-slider-horizontal');
+      this.addClass('dk-vjs-slider-horizontal');
     }
   }
 }

@@ -236,7 +236,7 @@ QUnit.test('should set element attributes from object', function(assert) {
 QUnit.test('should read tag attributes from elements, including HTML5 in all browsers', function(assert) {
   // Creating the source/track tags outside of the video tag prevents log errors
   const tags = `
-  <video id="vid1" controls autoplay loop muted preload="none" src="http://google.com" poster="http://www2.videojs.com/img/video-js-html5-video-player.png" data-test="asdf" data-empty-string="">
+  <video id="vid1" controls autoplay loop muted preload="none" src="http://google.com" poster="http://www2.videojs.com/img/dk-video-js-html5-video-player.png" data-test="asdf" data-empty-string="">
     <source id="source" src="http://google.com" type="video/mp4" media="fdsa" title="test" >
   </video>
   <track id="track" default src="http://google.com" kind="captions" srclang="en" label="testlabel" title="test" >
@@ -261,7 +261,7 @@ QUnit.test('should read tag attributes from elements, including HTML5 in all bro
   assert.equal(vid1Vals.id, 'vid1');
   assert.equal(vid1Vals.loop, true);
   assert.equal(vid1Vals.muted, true);
-  assert.equal(vid1Vals.poster, 'http://www2.videojs.com/img/video-js-html5-video-player.png');
+  assert.equal(vid1Vals.poster, 'http://www2.videojs.com/img/dk-video-js-html5-video-player.png');
   assert.equal(vid1Vals.preload, 'none');
   assert.equal(vid1Vals.src, 'http://google.com');
 

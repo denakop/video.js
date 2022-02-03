@@ -83,8 +83,8 @@ QUnit.test('should create the expected element', function(assert) {
   const elAssertions = TestHelpers.assertEl(assert, this.el, {
     tagName: 'div',
     classes: [
-      'vjs-modal-dialog',
-      'vjs-hidden'
+      'dk-vjs-modal-dialog',
+      'dk-vjs-hidden'
     ],
     attrs: {
       'aria-describedby': this.modal.descEl_.id,
@@ -106,8 +106,8 @@ QUnit.test('should create the expected description element', function(assert) {
     tagName: 'p',
     innerHTML: this.modal.description(),
     classes: [
-      'vjs-modal-dialog-description',
-      'vjs-control-text'
+      'dk-vjs-modal-dialog-description',
+      'dk-vjs-control-text'
     ],
     attrs: {
       id: this.el.getAttribute('aria-describedby')
@@ -122,7 +122,7 @@ QUnit.test('should create the expected contentEl', function(assert) {
   const elAssertions = TestHelpers.assertEl(assert, this.modal.contentEl(), {
     tagName: 'div',
     classes: [
-      'vjs-modal-dialog-content'
+      'dk-vjs-modal-dialog-content'
     ],
     props: {
       parentNode: this.el
@@ -164,11 +164,11 @@ QUnit.test('open() triggers events', function(assert) {
   assert.strictEqual(modalOpenSpy.callCount, 1, 'modalopen spy was called');
 });
 
-QUnit.test('open() removes "vjs-hidden" class', function(assert) {
+QUnit.test('open() removes "dk-vjs-hidden" class', function(assert) {
   assert.expect(2);
-  assert.ok(this.modal.hasClass('vjs-hidden'), 'modal starts hidden');
+  assert.ok(this.modal.hasClass('dk-vjs-hidden'), 'modal starts hidden');
   this.modal.open();
-  assert.notOk(this.modal.hasClass('vjs-hidden'), 'modal is not hidden after opening');
+  assert.notOk(this.modal.hasClass('dk-vjs-hidden'), 'modal is not hidden after opening');
 });
 
 QUnit.test('open() cannot be called on an opened modal', function(assert) {
@@ -203,11 +203,11 @@ QUnit.test('close() triggers events', function(assert) {
   assert.strictEqual(modalCloseSpy.callCount, 1, 'modalclose spy was called');
 });
 
-QUnit.test('close() adds the "vjs-hidden" class', function(assert) {
+QUnit.test('close() adds the "dk-vjs-hidden" class', function(assert) {
   assert.expect(1);
   this.modal.open();
   this.modal.close();
-  assert.ok(this.modal.hasClass('vjs-hidden'), 'modal is hidden upon close');
+  assert.ok(this.modal.hasClass('dk-vjs-hidden'), 'modal is hidden upon close');
 });
 
 QUnit.test('pressing ESC triggers close(), but only when the modal is opened', function(assert) {

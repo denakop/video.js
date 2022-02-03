@@ -37,7 +37,7 @@ QUnit.test('the default ID of the first player remains "vjs_video_3"', function(
   Guid.resetGuidInTestsOnly();
   const tag = document.createElement('video');
 
-  tag.className = 'video-js';
+  tag.className = 'dk-video-js';
 
   const player = TestHelpers.makePlayer({}, tag);
 
@@ -147,7 +147,7 @@ QUnit.test('should get tag, source, and track settings', function(assert) {
 
   const fixture = document.getElementById('qunit-fixture');
 
-  let html = '<video id="example_1" class="video-js" autoplay preload="none">';
+  let html = '<video id="example_1" class="dk-video-js" autoplay preload="none">';
 
   html += '<source src="http://google.com" type="video/mp4">';
   html += '<source src="http://google.com" type="video/webm">';
@@ -170,7 +170,7 @@ QUnit.test('should get tag, source, and track settings', function(assert) {
   assert.equal(player.options_.tracks[0].kind, 'captions', 'the text track is a captions file');
   assert.equal(player.options_.tracks[0].attrtest, '', 'we have an empty attribute called attrtest');
 
-  assert.notEqual(player.el().className.indexOf('video-js'), -1, 'transferred class from tag to player div');
+  assert.notEqual(player.el().className.indexOf('dk-video-js'), -1, 'transferred class from tag to player div');
   assert.equal(player.el().id, 'example_1', 'transferred id from tag to player div');
 
   assert.equal(Player.players[player.id()], player, 'player referenceable from global list');
@@ -188,7 +188,7 @@ QUnit.test('should get current source from source tag', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
   const html = [
-    '<video id="example_1" class="video-js" preload="none">',
+    '<video id="example_1" class="dk-video-js" preload="none">',
     '<source src="http://google.com" type="video/mp4">',
     '<source src="http://hugo.com" type="video/webm">',
     '</video>'
@@ -209,7 +209,7 @@ QUnit.test('should get current sources from source tag', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
   const html = [
-    '<video id="example_1" class="video-js" preload="none">',
+    '<video id="example_1" class="dk-video-js" preload="none">',
     '<source src="http://google.com" type="video/mp4">',
     '<source src="http://hugo.com" type="video/webm">',
     '</video>'
@@ -238,7 +238,7 @@ QUnit.test('should get current sources from source tag', function(assert) {
 QUnit.test('should get current source from src set', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  const html = '<video id="example_1" class="video-js" preload="none"></video>';
+  const html = '<video id="example_1" class="dk-video-js" preload="none"></video>';
 
   fixture.innerHTML += html;
 
@@ -276,7 +276,7 @@ QUnit.test('should get current source from src set', function(assert) {
 QUnit.test('should get current sources from src set', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  const html = '<video id="example_1" class="video-js" preload="none"></video>';
+  const html = '<video id="example_1" class="dk-video-js" preload="none"></video>';
 
   fixture.innerHTML += html;
 
@@ -325,7 +325,7 @@ QUnit.test('should get current sources from src set', function(assert) {
 QUnit.test('should remove autoplay attribute when normalizeAutoplay: true', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  let html = '<video id="example_1" class="video-js" autoplay preload="none">';
+  let html = '<video id="example_1" class="dk-video-js" autoplay preload="none">';
 
   html += '<source src="http://google.com" type="video/mp4">';
   html += '<source src="http://google.com" type="video/webm">';
@@ -652,7 +652,7 @@ QUnit.test('should set the width, height, and aspect ratio via a css class', fun
 
   // Switch to fluid mode
   player.fluid(true);
-  assert.ok(player.hasClass('vjs-fluid'), 'the vjs-fluid class should be added to the player');
+  assert.ok(player.hasClass('dk-vjs-fluid'), 'the dk-vjs-fluid class should be added to the player');
   assert.ok(confirmSetting('padding-top', '56.25%'), 'fluid aspect ratio should match the default aspect ratio');
 
   // Change the aspect ratio
@@ -710,26 +710,26 @@ QUnit.test('should resize fluid player on resize if fluid enabled post initialis
   player.dispose();
 });
 
-QUnit.test('should set fluid to true if element has vjs-fluid class', function(assert) {
+QUnit.test('should set fluid to true if element has dk-vjs-fluid class', function(assert) {
   const tag = TestHelpers.makeTag();
 
-  tag.className += ' vjs-fluid';
+  tag.className += ' dk-vjs-fluid';
 
   const player = TestHelpers.makePlayer({}, tag);
 
-  assert.ok(player.fluid(), 'fluid is true with vjs-fluid class');
+  assert.ok(player.fluid(), 'fluid is true with dk-vjs-fluid class');
 
   player.dispose();
 });
 
-QUnit.test('should set fill to true if element has vjs-fill class', function(assert) {
+QUnit.test('should set fill to true if element has dk-vjs-fill class', function(assert) {
   const tag = TestHelpers.makeTag();
 
-  tag.className += ' vjs-fill';
+  tag.className += ' dk-vjs-fill';
 
   const player = TestHelpers.makePlayer({}, tag);
 
-  assert.ok(player.fill(), 'fill is true with vjs-fill class');
+  assert.ok(player.fill(), 'fill is true with dk-vjs-fill class');
 
   player.dispose();
 });
@@ -737,7 +737,7 @@ QUnit.test('should set fill to true if element has vjs-fill class', function(ass
 QUnit.test('fill turns off fluid', function(assert) {
   const tag = TestHelpers.makeTag();
 
-  tag.className += ' vjs-fluid';
+  tag.className += ' dk-vjs-fluid';
 
   const player = TestHelpers.makePlayer({}, tag);
 
@@ -755,7 +755,7 @@ QUnit.test('fill turns off fluid', function(assert) {
 QUnit.test('fluid turns off fill', function(assert) {
   const tag = TestHelpers.makeTag();
 
-  tag.className += ' vjs-fill';
+  tag.className += ' dk-vjs-fill';
 
   const player = TestHelpers.makePlayer({}, tag);
 
@@ -859,7 +859,7 @@ QUnit.test('should load a media controller', function(assert) {
     ]
   });
 
-  assert.ok(player.el().children[0].className.indexOf('vjs-tech') !== -1, 'media controller loaded');
+  assert.ok(player.el().children[0].className.indexOf('dk-vjs-tech') !== -1, 'media controller loaded');
 
   player.dispose();
 });
@@ -891,13 +891,13 @@ QUnit.test('should set controls and trigger events', function(assert) {
   const player = TestHelpers.makePlayer({ controls: false });
 
   assert.ok(player.controls() === false, 'controls set through options');
-  const hasDisabledClass = player.el().className.indexOf('vjs-controls-disabled');
+  const hasDisabledClass = player.el().className.indexOf('dk-vjs-controls-disabled');
 
   assert.ok(hasDisabledClass !== -1, 'Disabled class added to player');
 
   player.controls(true);
   assert.ok(player.controls() === true, 'controls updated');
-  const hasEnabledClass = player.el().className.indexOf('vjs-controls-enabled');
+  const hasEnabledClass = player.el().className.indexOf('dk-vjs-controls-enabled');
 
   assert.ok(hasEnabledClass !== -1, 'Disabled class added to player');
 
@@ -929,13 +929,13 @@ QUnit.test('should toggle user the user state between active and inactive', func
 
   player.userActive(false);
   assert.ok(player.userActive() === false, 'Player state changed to inactive');
-  assert.ok(player.el().className.indexOf('vjs-user-active') === -1, 'Active class removed');
-  assert.ok(player.el().className.indexOf('vjs-user-inactive') !== -1, 'Inactive class added');
+  assert.ok(player.el().className.indexOf('dk-vjs-user-active') === -1, 'Active class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-user-inactive') !== -1, 'Inactive class added');
 
   player.userActive(true);
   assert.ok(player.userActive() === true, 'Player state changed to active');
-  assert.ok(player.el().className.indexOf('vjs-user-inactive') === -1, 'Inactive class removed');
-  assert.ok(player.el().className.indexOf('vjs-user-active') !== -1, 'Active class added');
+  assert.ok(player.el().className.indexOf('dk-vjs-user-inactive') === -1, 'Inactive class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-user-active') !== -1, 'Active class added');
 
   player.dispose();
 });
@@ -950,7 +950,7 @@ QUnit.test('should add a touch-enabled classname when touch is supported', funct
 
   const player = TestHelpers.makePlayer({});
 
-  assert.notEqual(player.el().className.indexOf('vjs-touch-enabled'), -1, 'touch-enabled classname added');
+  assert.notEqual(player.el().className.indexOf('dk-vjs-touch-enabled'), -1, 'touch-enabled classname added');
 
   browser.stub_TOUCH_ENABLED(origTouch);
   player.dispose();
@@ -966,7 +966,7 @@ QUnit.test('should not add a touch-enabled classname when touch is not supported
 
   const player = TestHelpers.makePlayer({});
 
-  assert.equal(player.el().className.indexOf('vjs-touch-enabled'), -1, 'touch-enabled classname not added');
+  assert.equal(player.el().className.indexOf('dk-vjs-touch-enabled'), -1, 'touch-enabled classname not added');
 
   browser.stub_TOUCH_ENABLED(origTouch);
   player.dispose();
@@ -990,11 +990,11 @@ QUnit.test('should allow for tracking when native controls are used', function(a
 
   player.usingNativeControls(true);
   assert.ok(player.usingNativeControls() === true, 'Using native controls is true');
-  assert.ok(player.el().className.indexOf('vjs-using-native-controls') !== -1, 'Native controls class added');
+  assert.ok(player.el().className.indexOf('dk-vjs-using-native-controls') !== -1, 'Native controls class added');
 
   player.usingNativeControls(false);
   assert.ok(player.usingNativeControls() === false, 'Using native controls is false');
-  assert.ok(player.el().className.indexOf('vjs-using-native-controls') === -1, 'Native controls class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-using-native-controls') === -1, 'Native controls class removed');
 
   player.dispose();
 });
@@ -1030,7 +1030,7 @@ QUnit.test('should register players with generated ids', function(assert) {
 
   const video = document.createElement('video');
 
-  video.className = 'vjs-default-skin video-js';
+  video.className = 'dk-vjs-default-skin dk-video-js';
   fixture.appendChild(video);
 
   const player = new Player(video, { techOrder: ['techFaker'] });
@@ -1090,25 +1090,25 @@ QUnit.test('should fire firstplay after resetting the player', function(assert) 
   player.dispose();
 });
 
-QUnit.test('should remove vjs-has-started class', function(assert) {
+QUnit.test('should remove dk-vjs-has-started class', function(assert) {
   assert.expect(3);
 
   const player = TestHelpers.makePlayer({});
 
   player.tech_.trigger('loadstart');
   player.tech_.trigger('play');
-  assert.ok(player.el().className.indexOf('vjs-has-started') !== -1, 'vjs-has-started class added');
+  assert.ok(player.el().className.indexOf('dk-vjs-has-started') !== -1, 'dk-vjs-has-started class added');
 
   player.tech_.trigger('loadstart');
-  assert.ok(player.el().className.indexOf('vjs-has-started') === -1, 'vjs-has-started class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-has-started') === -1, 'dk-vjs-has-started class removed');
 
   player.tech_.trigger('play');
 
-  assert.ok(player.el().className.indexOf('vjs-has-started') !== -1, 'vjs-has-started class added again');
+  assert.ok(player.el().className.indexOf('dk-vjs-has-started') !== -1, 'dk-vjs-has-started class added again');
   player.dispose();
 });
 
-QUnit.test('should add and remove vjs-ended class', function(assert) {
+QUnit.test('should add and remove dk-vjs-ended class', function(assert) {
   assert.expect(4);
 
   const player = TestHelpers.makePlayer({});
@@ -1116,16 +1116,16 @@ QUnit.test('should add and remove vjs-ended class', function(assert) {
   player.tech_.trigger('loadstart');
   player.tech_.trigger('play');
   player.tech_.trigger('ended');
-  assert.ok(player.el().className.indexOf('vjs-ended') !== -1, 'vjs-ended class added');
+  assert.ok(player.el().className.indexOf('dk-vjs-ended') !== -1, 'dk-vjs-ended class added');
 
   player.tech_.trigger('play');
-  assert.ok(player.el().className.indexOf('vjs-ended') === -1, 'vjs-ended class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-ended') === -1, 'dk-vjs-ended class removed');
 
   player.tech_.trigger('ended');
-  assert.ok(player.el().className.indexOf('vjs-ended') !== -1, 'vjs-ended class re-added');
+  assert.ok(player.el().className.indexOf('dk-vjs-ended') !== -1, 'dk-vjs-ended class re-added');
 
   player.tech_.trigger('loadstart');
-  assert.ok(player.el().className.indexOf('vjs-ended') === -1, 'vjs-ended class removed');
+  assert.ok(player.el().className.indexOf('dk-vjs-ended') === -1, 'dk-vjs-ended class removed');
   player.dispose();
 });
 
@@ -1172,8 +1172,8 @@ QUnit.test('player should handle different error types', function(assert) {
   player.error({ code: 3, message: testMsg });
   player.off('error', errConfig);
 
-  // check for vjs-error classname
-  assert.ok(player.el().className.indexOf('vjs-error') >= 0, 'player does not have vjs-error classname');
+  // check for dk-vjs-error classname
+  assert.ok(player.el().className.indexOf('dk-vjs-error') >= 0, 'player does not have dk-vjs-error classname');
 
   // restore error logging
   log.error.restore();
@@ -1546,7 +1546,7 @@ QUnit.test('pause is not called if the player is paused and ended is fired', fun
 QUnit.test('should add an audio class if an audio el is used', function(assert) {
   const audio = document.createElement('audio');
   const player = TestHelpers.makePlayer({}, audio);
-  const audioClass = 'vjs-audio';
+  const audioClass = 'dk-vjs-audio';
 
   assert.ok(player.el().className.indexOf(audioClass) !== -1, 'added ' + audioClass + ' css class');
   player.dispose();
@@ -1996,19 +1996,19 @@ QUnit.test('Remove waiting class after tech waiting when timeupdate shows a time
   player.currentTime = () => 1;
   player.tech_.trigger('waiting');
   assert.ok(
-    /vjs-waiting/.test(player.el().className),
-    'vjs-waiting is added to the player el on tech waiting'
+    /dk-vjs-waiting/.test(player.el().className),
+    'dk-vjs-waiting is added to the player el on tech waiting'
   );
   player.trigger('timeupdate');
   assert.ok(
-    /vjs-waiting/.test(player.el().className),
-    'vjs-waiting still exists on the player el when time hasn\'t changed on timeupdate'
+    /dk-vjs-waiting/.test(player.el().className),
+    'dk-vjs-waiting still exists on the player el when time hasn\'t changed on timeupdate'
   );
   player.currentTime = () => 2;
   player.trigger('timeupdate');
   assert.notOk(
-    (/vjs-waiting/).test(player.el().className),
-    'vjs-waiting removed from the player el when time has changed on timeupdate'
+    (/dk-vjs-waiting/).test(player.el().className),
+    'dk-vjs-waiting removed from the player el when time has changed on timeupdate'
   );
   player.dispose();
 });
@@ -2079,7 +2079,7 @@ QUnit.test('Make sure that player\'s style el respects VIDEOJS_NO_DYNAMIC_STYLE 
 
   let tag = TestHelpers.makeTag();
 
-  tag.id = 'vjs-no-base-theme-tag';
+  tag.id = 'dk-vjs-no-base-theme-tag';
   tag.width = 600;
   tag.height = 300;
 
@@ -2094,7 +2094,7 @@ QUnit.test('Make sure that player\'s style el respects VIDEOJS_NO_DYNAMIC_STYLE 
   TestHelpers.makePlayer({}, tag);
   styles = document.querySelectorAll('style');
   assert.equal(styles.length, 1, 'we should have one style element in the DOM');
-  assert.equal(styles[0].className, 'vjs-styles-dimensions', 'the class name is the one we expected');
+  assert.equal(styles[0].className, 'dk-vjs-styles-dimensions', 'the class name is the one we expected');
 });
 
 QUnit.test('When VIDEOJS_NO_DYNAMIC_STYLE is set, apply sizing directly to the tech el', function(assert) {
@@ -2110,7 +2110,7 @@ QUnit.test('When VIDEOJS_NO_DYNAMIC_STYLE is set, apply sizing directly to the t
 
   const tag = TestHelpers.makeTag();
 
-  tag.id = 'vjs-no-base-theme-tag';
+  tag.id = 'dk-vjs-no-base-theme-tag';
   tag.width = 600;
   tag.height = 300;
 
@@ -2406,7 +2406,7 @@ QUnit.test('should add a class with major version', function(assert) {
   const majorVersion = pkg.version.split('.')[0];
   const player = TestHelpers.makePlayer();
 
-  assert.ok(player.hasClass('vjs-v' + majorVersion), 'the version class should be added to the player');
+  assert.ok(player.hasClass('dk-vjs-v' + majorVersion), 'the version class should be added to the player');
 
   player.dispose();
 });

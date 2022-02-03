@@ -248,11 +248,11 @@ QUnit.test('should expose DOM functions', function(assert) {
   });
 });
 
-QUnit.test('ingest player div if data-vjs-player attribute is present on video parentNode', function(assert) {
+QUnit.test('ingest player div if data-dk-vjs-player attribute is present on video parentNode', function(assert) {
   const fixture = document.querySelector('#qunit-fixture');
 
   fixture.innerHTML = `
-    <div data-vjs-player class="foo">
+    <div data-dk-vjs-player class="foo">
       <video id="test_vid_id">
         <source src="http://example.com/video.mp4" type="video/mp4"></source>
       </video>
@@ -278,7 +278,7 @@ QUnit.test('ingested player div should not create a new tag for movingMediaEleme
   const fixture = document.querySelector('#qunit-fixture');
 
   fixture.innerHTML = `
-    <div data-vjs-player class="foo">
+    <div data-dk-vjs-player class="foo">
       <video id="test_vid_id">
         <source src="http://example.com/video.mp4" type="video/mp4"></source>
       </video>
@@ -344,7 +344,7 @@ QUnit.test('should create a new tag for movingMediaElementInDOM', function(asser
 QUnit.test('getPlayer', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>';
 
   assert.notOk(videojs.getPlayer('test_vid_id'), 'no player was created yet');
 
@@ -361,7 +361,7 @@ QUnit.test('getPlayer', function(assert) {
 QUnit.test('videojs() works with the tech id', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="player"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="player"></dk-video-js>';
 
   const tag = document.querySelector('#player');
   const player = videojs('#player', {techOrder: ['html5']});
@@ -375,7 +375,7 @@ QUnit.test('videojs() works with the tech id', function(assert) {
 QUnit.test('getPlayer works with the tech id', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="player"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="player"></dk-video-js>';
 
   const tag = document.querySelector('#player');
   const player = videojs('#player', {techOrder: ['html5']});
@@ -411,7 +411,7 @@ QUnit.test('getAllPlayers', function(assert) {
 /* **************************************************** *
  * div embed tests copied from video emebed tests above *
  * **************************************************** */
-QUnit.module('video.js video-js embed', {
+QUnit.module('video.js dk-video-js embed', {
   beforeEach() {
     this.clock = sinon.useFakeTimers();
   },
@@ -424,8 +424,8 @@ QUnit.module('video.js video-js embed', {
 QUnit.test('should return a video player instance', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>' +
-                       '<video-js id="test_vid_id2"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>' +
+                       '<dk-video-js id="test_vid_id2"></dk-video-js>';
 
   const player = videojs('test_vid_id', { techOrder: ['techFaker'] });
 
@@ -448,23 +448,23 @@ QUnit.test('should return a video player instance', function(assert) {
   assert.ok(player2.id() === 'test_vid_id2', 'created player from element');
 });
 
-QUnit.test('should add video-js class to video-js embed if missing', function(assert) {
+QUnit.test('should add dk-video-js class to dk-video-js embed if missing', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>' +
-                       '<video-js id="test_vid_id2" class="foo"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>' +
+                       '<dk-video-js id="test_vid_id2" class="foo"></dk-video-js>';
 
   const player = videojs('test_vid_id', { techOrder: ['techFaker'] });
 
   assert.ok(player, 'created player from tag');
   assert.ok(player.id() === 'test_vid_id');
-  assert.ok(player.hasClass('video-js'), 'we have the video-js class');
+  assert.ok(player.hasClass('dk-video-js'), 'we have the dk-video-js class');
 
   const tag2 = document.getElementById('test_vid_id2');
   const player2 = videojs(tag2, { techOrder: ['techFaker'] });
 
   assert.ok(player2.id() === 'test_vid_id2', 'created player from element');
-  assert.ok(player2.hasClass('video-js'), 'we have the video-js class');
+  assert.ok(player2.hasClass('dk-video-js'), 'we have the dk-video-js class');
   assert.ok(player2.hasClass('foo'), 'we have the foo class');
 });
 
@@ -479,7 +479,7 @@ QUnit.test(
       warnLogs.push(args);
     };
 
-    fixture.innerHTML += '<video-js id="test_vid_id"></video-js>';
+    fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>';
 
     const player = videojs('test_vid_id', { techOrder: ['techFaker'] });
 
@@ -513,8 +513,8 @@ QUnit.test(
 QUnit.test('should return a video player instance from el html5 tech', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>' +
-                       '<video-js id="test_vid_id2"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>' +
+                       '<dk-video-js id="test_vid_id2"></dk-video-js>';
 
   const vid = document.querySelector('#test_vid_id');
 
@@ -541,8 +541,8 @@ QUnit.test('should return a video player instance from el html5 tech', function(
 QUnit.test('should return a video player instance from el techfaker', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>' +
-                       '<video-js id="test_vid_id2"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>' +
+                       '<dk-video-js id="test_vid_id2"></dk-video-js>';
 
   const vid = document.querySelector('#test_vid_id');
   const player = videojs(vid, {techOrder: ['techFaker']});
@@ -565,17 +565,17 @@ QUnit.test('should return a video player instance from el techfaker', function(a
   assert.ok(player2.id() === 'test_vid_id2', 'created player from element');
 });
 
-QUnit.test('adds video-js class name with the video-js embed', function(assert) {
+QUnit.test('adds dk-video-js class name with the dk-video-js embed', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
 
-  fixture.innerHTML += '<video-js id="test_vid_id"></video-js>' +
-                       '<video-js class="video-js" id="test_vid_id2"></video-js>';
+  fixture.innerHTML += '<dk-video-js id="test_vid_id"></dk-video-js>' +
+                       '<dk-video-js class="dk-video-js" id="test_vid_id2"></dk-video-js>';
 
   const vid = document.querySelector('#test_vid_id');
   const player = videojs(vid, {techOrder: ['techFaker']});
   const tag2 = document.getElementById('test_vid_id2');
   const player2 = videojs(tag2, { techOrder: ['techFaker'] });
 
-  assert.ok(player.hasClass('video-js'), 'video-js class was added to the first embed');
-  assert.ok(player2.hasClass('video-js'), 'video-js class was preserved to the second embed');
+  assert.ok(player.hasClass('dk-video-js'), 'dk-video-js class was added to the first embed');
+  assert.ok(player2.hasClass('dk-video-js'), 'dk-video-js class was preserved to the second embed');
 });

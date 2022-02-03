@@ -148,7 +148,7 @@ if (!Html5.supportsNativeTextTracks()) {
     this.clock.tick(1);
     player.play();
 
-    assert.ok(!captionsButton.hasClass('vjs-hidden'), 'The captions button is shown');
+    assert.ok(!captionsButton.hasClass('dk-vjs-hidden'), 'The captions button is shown');
     assert.ok(englishTrack.mode === 'disabled', 'English track should be disabled');
     player.dispose();
   });

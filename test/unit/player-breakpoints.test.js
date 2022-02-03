@@ -40,7 +40,7 @@ QUnit.test('enabling responsive mode', function(assert) {
 
   // Player should be 300x150 by default.
   assert.strictEqual(this.player.currentBreakpoint(), 'xsmall', 'current breakpoint set');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-x-small', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-x-small', 'current breakpoint set');
 });
 
 QUnit.test('setting custom breakpoints and enabling responsive mode', function(assert) {
@@ -51,7 +51,7 @@ QUnit.test('setting custom breakpoints and enabling responsive mode', function(a
 
   // Player should be 300x150 by default.
   assert.strictEqual(this.player.currentBreakpoint(), 'tiny', 'current breakpoint set');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-tiny', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-tiny', 'current breakpoint set');
 });
 
 QUnit.test('setting breakpoints/responsive via option', function(assert) {
@@ -61,7 +61,7 @@ QUnit.test('setting breakpoints/responsive via option', function(assert) {
 
   // Player should be 300x150 by default.
   assert.strictEqual(player.currentBreakpoint(), 'tiny', 'current breakpoint set');
-  assert.strictEqual(player.currentBreakpointClass(), 'vjs-layout-tiny', 'current breakpoint set');
+  assert.strictEqual(player.currentBreakpointClass(), 'dk-vjs-layout-tiny', 'current breakpoint set');
   player.dispose();
 });
 
@@ -74,35 +74,35 @@ QUnit.test('changing the player size triggers breakpoints', function(assert) {
   currentWidth = 200;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'tiny', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-tiny', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-tiny', 'current breakpoint set');
 
   currentWidth = 300;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'xsmall', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-x-small', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-x-small', 'current breakpoint set');
 
   currentWidth = 400;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'small', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-small', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-small', 'current breakpoint set');
 
   currentWidth = 600;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'medium', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-medium', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-medium', 'current breakpoint set');
 
   currentWidth = 900;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'large', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-large', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-large', 'current breakpoint set');
 
   currentWidth = 1600;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'xlarge', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-x-large', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-x-large', 'current breakpoint set');
 
   currentWidth = 3000;
   this.player.trigger('playerresize');
   assert.strictEqual(this.player.currentBreakpoint(), 'huge', 'current breakpoint is correct');
-  assert.strictEqual(this.player.currentBreakpointClass(), 'vjs-layout-huge', 'current breakpoint set');
+  assert.strictEqual(this.player.currentBreakpointClass(), 'dk-vjs-layout-huge', 'current breakpoint set');
 });

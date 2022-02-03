@@ -1,25 +1,25 @@
 // North America uses 'CC' icon
-.video-js:lang(en) .vjs-subs-caps-button .vjs-icon-placeholder,
-.video-js:lang(fr-CA) .vjs-subs-caps-button .vjs-icon-placeholder {
-  @extend .vjs-icon-captions;
+.dk-video-js:lang(en) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder,
+.dk-video-js:lang(fr-CA) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder {
+  @extend .dk-vjs-icon-captions;
 }
 
 // ROW uses 'subtitles'
 // Double selector because @extend puts these rules above the captions icon
-.video-js .vjs-subs-caps-button .vjs-icon-placeholder,
-.video-js.video-js:lang(en-GB) .vjs-subs-caps-button .vjs-icon-placeholder,
-.video-js.video-js:lang(en-IE) .vjs-subs-caps-button .vjs-icon-placeholder,
-.video-js.video-js:lang(en-AU) .vjs-subs-caps-button .vjs-icon-placeholder,
-.video-js.video-js:lang(en-NZ) .vjs-subs-caps-button .vjs-icon-placeholder {
-  @extend .vjs-icon-subtitles;
+.dk-video-js .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder,
+.dk-video-js.dk-video-js:lang(en-GB) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder,
+.dk-video-js.dk-video-js:lang(en-IE) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder,
+.dk-video-js.dk-video-js:lang(en-AU) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder,
+.dk-video-js.dk-video-js:lang(en-NZ) .dk-vjs-subs-caps-button .dk-vjs-icon-placeholder {
+  @extend .dk-vjs-icon-subtitles;
 }
 
-.video-js .vjs-subs-caps-button + .vjs-menu .vjs-captions-menu-item .vjs-menu-item-text .vjs-icon-placeholder {
+.dk-video-js .dk-vjs-subs-caps-button + .dk-vjs-menu .dk-vjs-captions-menu-item .dk-vjs-menu-item-text .dk-vjs-icon-placeholder {
   vertical-align: middle;
   display: inline-block;
   margin-bottom: -0.1em;
 }
-.video-js .vjs-subs-caps-button + .vjs-menu .vjs-captions-menu-item .vjs-menu-item-text .vjs-icon-placeholder:before {
+.dk-video-js .dk-vjs-subs-caps-button + .dk-vjs-menu .dk-vjs-captions-menu-item .dk-vjs-menu-item-text .dk-vjs-icon-placeholder:before {
   font-family: VideoJS;
   content: "\f10d";
   font-size: 1.5em;

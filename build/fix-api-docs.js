@@ -6,7 +6,7 @@ const replacements = [
   {find: /\/docs\/guides\/(.+)\.md/g, replace: 'tutorial-$1.html'},
   {find: /tutorial-tech.html/g, replace: 'tutorial-tech_.html'},
   {find: /\/docs\/guides\//g, replace: '#'},
-  {find: /(\<h[1-6] id="(?:.*)?)video-js(.*)?"\>/g, replace: '$1videojs$2">'},
+  {find: /(\<h[1-6] id="(?:.*)?)dk-video-js(.*)?"\>/g, replace: '$1videojs$2">'},
   {find: /(\<h[1-6] id="(?:.*)?)don-t(.*)?"\>/g, replace: '$1dont$2">'},
   {find: /(\<h[1-6] id="(?:.*)?)node-js(.*)?"\>/g, replace: '$1nodejs$2">'},
   {find: /(\<h[1-6] id="(?:.*)?)vtt-js(.*)?"\>/g, replace: '$1vttjs$2">'},

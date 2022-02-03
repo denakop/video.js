@@ -681,9 +681,9 @@ QUnit.test('should show and hide an element', function(assert) {
   const comp = new Component(this.player, {});
 
   comp.hide();
-  assert.ok(comp.hasClass('vjs-hidden') === true);
+  assert.ok(comp.hasClass('dk-vjs-hidden') === true);
   comp.show();
-  assert.ok(comp.hasClass('vjs-hidden') === false);
+  assert.ok(comp.hasClass('dk-vjs-hidden') === false);
 
   comp.dispose();
 });

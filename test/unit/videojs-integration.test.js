@@ -52,7 +52,7 @@ QUnit.test('create a real player and dispose', function(assert) {
 
   // TODO: use a local source rather than a remote one
   fixture.innerHTML = `
-    <video-js
+    <dk-video-js
       id="vid1"
       controls
       preload="auto"
@@ -63,8 +63,8 @@ QUnit.test('create a real player and dispose', function(assert) {
       <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
       <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
       <track kind="captions" src="../docs/examples/shared/example-captions.vtt" srclang="en" label="English">
-      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-    </video-js>
+      <p class="dk-vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </dk-video-js>
   `.trim();
 
   const player = videojs('vid1', {techOrder: ['html5']});

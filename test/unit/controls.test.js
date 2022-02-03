@@ -35,8 +35,8 @@ QUnit.test('should hide volume and mute toggle control if it\'s not supported', 
   const volumeControl = new VolumeControl(player);
   const muteToggle = new MuteToggle(player);
 
-  assert.ok(volumeControl.hasClass('vjs-hidden'), 'volumeControl is not hidden');
-  assert.ok(muteToggle.hasClass('vjs-hidden'), 'muteToggle is not hidden');
+  assert.ok(volumeControl.hasClass('dk-vjs-hidden'), 'volumeControl is not hidden');
+  assert.ok(muteToggle.hasClass('dk-vjs-hidden'), 'muteToggle is not hidden');
 
   player.dispose();
   volumeControl.dispose();
@@ -52,7 +52,7 @@ QUnit.test('should show replay icon when video playback ended', function(assert)
 
   player.trigger('ended');
 
-  assert.ok(playToggle.hasClass('vjs-ended'), 'playToogle is in the ended state');
+  assert.ok(playToggle.hasClass('dk-vjs-ended'), 'playToogle is in the ended state');
 
   player.dispose();
   playToggle.dispose();
@@ -67,7 +67,7 @@ QUnit.test('should show replay icon when video playback ended and replay option 
 
   player.trigger('ended');
 
-  assert.ok(playToggle.hasClass('vjs-ended'), 'playToogle is in the ended state');
+  assert.ok(playToggle.hasClass('dk-vjs-ended'), 'playToogle is in the ended state');
 
   player.dispose();
   playToggle.dispose();
@@ -82,7 +82,7 @@ QUnit.test('should not show the replay icon when video playback ended', function
 
   player.trigger('ended');
 
-  assert.equal(playToggle.hasClass('vjs-ended'), false, 'playToogle is not in the ended state');
+  assert.equal(playToggle.hasClass('dk-vjs-ended'), false, 'playToogle is not in the ended state');
 
   player.dispose();
   playToggle.dispose();
@@ -97,22 +97,22 @@ QUnit.test('should test and toggle volume control on `loadstart`', function(asse
   const volumeControl = new VolumeControl(player);
   const muteToggle = new MuteToggle(player);
 
-  assert.equal(volumeControl.hasClass('vjs-hidden'), false, 'volumeControl is hidden initially');
-  assert.equal(muteToggle.hasClass('vjs-hidden'), false, 'muteToggle is hidden initially');
+  assert.equal(volumeControl.hasClass('dk-vjs-hidden'), false, 'volumeControl is hidden initially');
+  assert.equal(muteToggle.hasClass('dk-vjs-hidden'), false, 'muteToggle is hidden initially');
 
   player.tech_.featuresVolumeControl = false;
   player.tech_.featuresMuteControl = false;
   player.trigger('loadstart');
 
-  assert.equal(volumeControl.hasClass('vjs-hidden'), true, 'volumeControl does not hide itself');
-  assert.equal(muteToggle.hasClass('vjs-hidden'), true, 'muteToggle does not hide itself');
+  assert.equal(volumeControl.hasClass('dk-vjs-hidden'), true, 'volumeControl does not hide itself');
+  assert.equal(muteToggle.hasClass('dk-vjs-hidden'), true, 'muteToggle does not hide itself');
 
   player.tech_.featuresVolumeControl = true;
   player.tech_.featuresMuteControl = true;
   player.trigger('loadstart');
 
-  assert.equal(volumeControl.hasClass('vjs-hidden'), false, 'volumeControl does not show itself');
-  assert.equal(muteToggle.hasClass('vjs-hidden'), false, 'muteToggle does not show itself');
+  assert.equal(volumeControl.hasClass('dk-vjs-hidden'), false, 'volumeControl does not show itself');
+  assert.equal(muteToggle.hasClass('dk-vjs-hidden'), false, 'muteToggle does not show itself');
 
   player.dispose();
   volumeControl.dispose();
@@ -179,7 +179,7 @@ QUnit.test('playback rate button is hidden by default', function(assert) {
   const player = TestHelpers.makePlayer();
   const playbackRate = new PlaybackRateMenuButton(player);
 
-  assert.ok(playbackRate.el().className.indexOf('vjs-hidden') >= 0, 'playbackRate is hidden');
+  assert.ok(playbackRate.el().className.indexOf('dk-vjs-hidden') >= 0, 'playbackRate is hidden');
 
   player.dispose();
   playbackRate.dispose();
@@ -193,7 +193,7 @@ QUnit.test('playback rate button is not hidden if playback rates are set', funct
   });
   const playbackRate = new PlaybackRateMenuButton(player);
 
-  assert.ok(playbackRate.el().className.indexOf('vjs-hidden') === -1, 'playbackRate is not hidden');
+  assert.ok(playbackRate.el().className.indexOf('dk-vjs-hidden') === -1, 'playbackRate is not hidden');
 
   player.dispose();
   playbackRate.dispose();
@@ -209,13 +209,13 @@ QUnit.test('should show or hide playback rate menu button on playback rates chan
 
   const playbackRate = new PlaybackRateMenuButton(player);
 
-  assert.ok(playbackRate.el().className.indexOf('vjs-hidden') === -1, 'playbackRate is not hidden');
+  assert.ok(playbackRate.el().className.indexOf('dk-vjs-hidden') === -1, 'playbackRate is not hidden');
 
   playbackRatesReturnValue = norates;
 
   player.trigger('playbackrateschange');
 
-  assert.ok(playbackRate.el().className.indexOf('vjs-hidden') >= 0, 'playbackRate is hidden');
+  assert.ok(playbackRate.el().className.indexOf('dk-vjs-hidden') >= 0, 'playbackRate is hidden');
 
   player.dispose();
   playbackRate.dispose();

@@ -77,14 +77,14 @@ const setupEnv = function(env, testName) {
   });
   videojs.hook('setup', env.hook);
 
-  if ((/video-js/i).test(testName)) {
-    env.mediaEl = document.createElement('video-js');
+  if ((/dk-video-js/i).test(testName)) {
+    env.mediaEl = document.createElement('dk-video-js');
   } else if ((/audio/i).test(testName)) {
     env.mediaEl = document.createElement('audio');
   } else {
     env.mediaEl = document.createElement('video');
   }
-  env.mediaEl.className = 'video-js';
+  env.mediaEl.className = 'dk-video-js';
   env.fixture.appendChild(env.mediaEl);
 };
 
@@ -110,7 +110,7 @@ const setupAfterEach = function(totalSourcesets) {
   };
 };
 
-const testTypes = ['video el', 'change video el', 'audio el', 'change audio el', 'video-js', 'change video-js el'];
+const testTypes = ['video el', 'change video el', 'audio el', 'change audio el', 'dk-video-js', 'change dk-video-js el'];
 
 QUnit[qunitFn]('sourceset', function(hooks) {
   QUnit.module('source before player', (subhooks) => testTypes.forEach((testName) => {

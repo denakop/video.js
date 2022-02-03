@@ -39,7 +39,7 @@ class MuteToggle extends Button {
    *         The DOM `className` for this object.
    */
   buildCSSClass() {
-    return `vjs-mute-control ${super.buildCSSClass()}`;
+    return `dk-vjs-mute-control ${super.buildCSSClass()}`;
   }
 
   /**
@@ -115,15 +115,15 @@ class MuteToggle extends Button {
 
     // TODO improve muted icon classes
     for (let i = 0; i < 4; i++) {
-      Dom.removeClass(this.el_, `vjs-vol-${i}`);
+      Dom.removeClass(this.el_, `dk-vjs-vol-${i}`);
     }
-    Dom.addClass(this.el_, `vjs-vol-${level}`);
+    Dom.addClass(this.el_, `dk-vjs-vol-${level}`);
   }
 
   /**
    * If `muted` has changed on the player, update the control text
-   * (`title` attribute on `vjs-mute-control` element and content of
-   * `vjs-control-text` element).
+   * (`title` attribute on `dk-vjs-mute-control` element and content of
+   * `dk-vjs-control-text` element).
    *
    * @private
    */

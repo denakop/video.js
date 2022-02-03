@@ -13,7 +13,7 @@ const options = {
     error: true
   },
   ignore: [
-    // Ignore warning about contrast of the "vjs-no-js" fallback link
+    // Ignore warning about contrast of the "dk-vjs-no-js" fallback link
     'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage'
   ]
 };

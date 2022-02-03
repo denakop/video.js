@@ -42,7 +42,7 @@
 
         var _highlightJs2 = _interopRequireDefault(_highlightJs);
 
-        var _libVjsVersionJs = require('./lib/vjs-version.js');
+        var _libVjsVersionJs = require('./lib/dk-vjs-version.js');
 
         // Start highlighting
 
@@ -55,7 +55,7 @@
             if (e)
                 return console.error(e);
 
-            $('.vjs-version').text(pkg.version);
+            $('.dk-vjs-version').text(pkg.version);
             $('.ie8-version').text(pkg.dependencies['videojs-ie8']);
         });
 
@@ -76,7 +76,7 @@
         });
 
     }, {
-        "./lib/vjs-version.js": 2,
+        "./lib/dk-vjs-version.js": 2,
         "global/window": 3,
         "highlight.js": 39
     }

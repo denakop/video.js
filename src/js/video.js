@@ -192,22 +192,22 @@ videojs.removeHook = removeHook;
 
 // Add default styles
 if (window.VIDEOJS_NO_DYNAMIC_STYLE !== true && Dom.isReal()) {
-  let style = Dom.$('.vjs-styles-defaults');
+  let style = Dom.$('.dk-vjs-styles-defaults');
 
   if (!style) {
-    style = stylesheet.createStyleElement('vjs-styles-defaults');
+    style = stylesheet.createStyleElement('dk-vjs-styles-defaults');
     const head = Dom.$('head');
 
     if (head) {
       head.insertBefore(style, head.firstChild);
     }
     stylesheet.setTextContent(style, `
-      .video-js {
+      .dk-video-js {
         width: 300px;
         height: 150px;
       }
 
-      .vjs-fluid {
+      .dk-vjs-fluid {
         padding-top: 56.25%
       }
     `);
@@ -249,7 +249,7 @@ videojs.getPlayers = () => Player.players;
  * Video.js player, but not create one if it doesn't.
  *
  * @param   {string|Element} id
- *          An HTML element - `<video>`, `<audio>`, or `<video-js>` -
+ *          An HTML element - `<video>`, `<audio>`, or `<dk-video-js>` -
  *          or a string matching the `id` of such an element.
  *
  * @return {Player|undefined}

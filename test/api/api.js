@@ -269,7 +269,7 @@ function testHelperMakeTag() {
   const videoTag = document.createElement('video');
 
   videoTag.id = 'example_1';
-  videoTag.className = 'video-js';
+  videoTag.className = 'dk-video-js';
   return videoTag;
 }
 

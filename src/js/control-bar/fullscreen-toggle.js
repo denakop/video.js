@@ -37,7 +37,7 @@ class FullscreenToggle extends Button {
    *         The DOM `className` for this object.
    */
   buildCSSClass() {
-    return `vjs-fullscreen-control ${super.buildCSSClass()}`;
+    return `dk-vjs-fullscreen-control ${super.buildCSSClass()}`;
   }
 
   /**

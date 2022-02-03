@@ -25,7 +25,7 @@ class TechFaker extends Tech {
 
   createEl() {
     const el = super.createEl('div', {
-      className: 'vjs-tech'
+      className: 'dk-vjs-tech'
     });
 
     return el;

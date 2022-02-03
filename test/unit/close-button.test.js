@@ -26,15 +26,15 @@ QUnit.test('should create the expected element', function(assert) {
   const elAssertions = TestHelpers.assertEl(assert, this.btn.el(), {
     tagName: 'button',
     classes: [
-      'vjs-button',
-      'vjs-close-button',
-      'vjs-control'
+      'dk-vjs-button',
+      'dk-vjs-close-button',
+      'dk-vjs-control'
     ]
   });
 
   assert.expect(elAssertions.count + 1);
   elAssertions();
-  assert.strictEqual(this.btn.el().querySelector('.vjs-control-text').innerHTML, 'Close');
+  assert.strictEqual(this.btn.el().querySelector('.dk-vjs-control-text').innerHTML, 'Close');
 });
 
 QUnit.test('should allow setting the controlText_ property as an option', function(assert) {

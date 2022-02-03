@@ -8,7 +8,7 @@ const options = {
   owner: 'videojs',
   repo: 'video.js',
   body: currentChangelog(),
-  assets: ['./dist/video-js-' + pkg.version + '.zip'],
+  assets: ['./dist/dk-video-js-' + pkg.version + '.zip'],
   endpoint: 'https://api.github.com',
   auth: {
     username: process.env.VJS_GITHUB_USER,

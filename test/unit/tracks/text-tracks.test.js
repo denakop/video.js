@@ -431,7 +431,7 @@ QUnit.test('removes cuechange event when text track is hidden for emulated track
 QUnit.test('should return correct remote text track values', function(assert) {
   const fixture = document.getElementById('qunit-fixture');
   const html = `
-    <video id="example_1" class="video-js" autoplay preload="none">
+    <video id="example_1" class="dk-video-js" autoplay preload="none">
       <source src="http://google.com" type="video/mp4">
       <source src="http://google.com" type="video/webm">
       <track kind="captions" label="label">

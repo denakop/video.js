@@ -62,27 +62,27 @@ class VolumePanel extends Component {
   }
 
   /**
-   * Add vjs-slider-active class to the VolumePanel
+   * Add dk-vjs-slider-active class to the VolumePanel
    *
    * @listens VolumeControl#slideractive
    * @private
    */
   sliderActive_() {
-    this.addClass('vjs-slider-active');
+    this.addClass('dk-vjs-slider-active');
   }
 
   /**
-   * Removes vjs-slider-active class to the VolumePanel
+   * Removes dk-vjs-slider-active class to the VolumePanel
    *
    * @listens VolumeControl#sliderinactive
    * @private
    */
   sliderInactive_() {
-    this.removeClass('vjs-slider-active');
+    this.removeClass('dk-vjs-slider-active');
   }
 
   /**
-   * Adds vjs-hidden or vjs-mute-toggle-only to the VolumePanel
+   * Adds dk-vjs-hidden or dk-vjs-mute-toggle-only to the VolumePanel
    * depending on MuteToggle and VolumeControl state
    *
    * @listens Player#loadstart
@@ -91,14 +91,14 @@ class VolumePanel extends Component {
   volumePanelState_() {
     // hide volume panel if neither volume control or mute toggle
     // are displayed
-    if (this.volumeControl.hasClass('vjs-hidden') && this.muteToggle.hasClass('vjs-hidden')) {
-      this.addClass('vjs-hidden');
+    if (this.volumeControl.hasClass('dk-vjs-hidden') && this.muteToggle.hasClass('dk-vjs-hidden')) {
+      this.addClass('dk-vjs-hidden');
     }
 
     // if only mute toggle is visible we don't want
     // volume panel expanding when hovered or active
-    if (this.volumeControl.hasClass('vjs-hidden') && !this.muteToggle.hasClass('vjs-hidden')) {
-      this.addClass('vjs-mute-toggle-only');
+    if (this.volumeControl.hasClass('dk-vjs-hidden') && !this.muteToggle.hasClass('dk-vjs-hidden')) {
+      this.addClass('dk-vjs-mute-toggle-only');
     }
   }
 
@@ -109,14 +109,14 @@ class VolumePanel extends Component {
    *         The element that was created.
    */
   createEl() {
-    let orientationClass = 'vjs-volume-panel-horizontal';
+    let orientationClass = 'dk-vjs-volume-panel-horizontal';
 
     if (!this.options_.inline) {
-      orientationClass = 'vjs-volume-panel-vertical';
+      orientationClass = 'dk-vjs-volume-panel-vertical';
     }
 
     return super.createEl('div', {
-      className: `vjs-volume-panel vjs-control ${orientationClass}`
+      className: `dk-vjs-volume-panel dk-vjs-control ${orientationClass}`
     });
   }
 
@@ -154,7 +154,7 @@ class VolumePanel extends Component {
    * @listens mouseover
    */
   handleMouseOver(event) {
-    this.addClass('vjs-hover');
+    this.addClass('dk-vjs-hover');
     Events.on(document, 'keyup', this.handleKeyPressHandler_);
   }
 
@@ -169,7 +169,7 @@ class VolumePanel extends Component {
    * @listens mouseout
    */
   handleMouseOut(event) {
-    this.removeClass('vjs-hover');
+    this.removeClass('dk-vjs-hover');
     Events.off(document, 'keyup', this.handleKeyPressHandler_);
   }
 

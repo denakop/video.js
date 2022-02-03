@@ -42,7 +42,7 @@ class PlayToggle extends Button {
    *         The DOM `className` for this object.
    */
   buildCSSClass() {
-    return `vjs-play-control ${super.buildCSSClass()}`;
+    return `dk-vjs-play-control ${super.buildCSSClass()}`;
   }
 
   /**
@@ -74,7 +74,7 @@ class PlayToggle extends Button {
    * @listens Player#seeked
    */
   handleSeeked(event) {
-    this.removeClass('vjs-ended');
+    this.removeClass('dk-vjs-ended');
 
     if (this.player_.paused()) {
       this.handlePause(event);
@@ -84,7 +84,7 @@ class PlayToggle extends Button {
   }
 
   /**
-   * Add the vjs-playing class to the element so it can change appearance.
+   * Add the dk-vjs-playing class to the element so it can change appearance.
    *
    * @param {EventTarget~Event} [event]
    *        The event that caused this function to run.
@@ -92,15 +92,15 @@ class PlayToggle extends Button {
    * @listens Player#play
    */
   handlePlay(event) {
-    this.removeClass('vjs-ended');
-    this.removeClass('vjs-paused');
-    this.addClass('vjs-playing');
+    this.removeClass('dk-vjs-ended');
+    this.removeClass('dk-vjs-paused');
+    this.addClass('dk-vjs-playing');
     // change the button text to "Pause"
     this.controlText('Pause');
   }
 
   /**
-   * Add the vjs-paused class to the element so it can change appearance.
+   * Add the dk-vjs-paused class to the element so it can change appearance.
    *
    * @param {EventTarget~Event} [event]
    *        The event that caused this function to run.
@@ -108,14 +108,14 @@ class PlayToggle extends Button {
    * @listens Player#pause
    */
   handlePause(event) {
-    this.removeClass('vjs-playing');
-    this.addClass('vjs-paused');
+    this.removeClass('dk-vjs-playing');
+    this.addClass('dk-vjs-paused');
     // change the button text to "Play"
     this.controlText('Play');
   }
 
   /**
-   * Add the vjs-ended class to the element so it can change appearance
+   * Add the dk-vjs-ended class to the element so it can change appearance
    *
    * @param {EventTarget~Event} [event]
    *        The event that caused this function to run.
@@ -123,8 +123,8 @@ class PlayToggle extends Button {
    * @listens Player#ended
    */
   handleEnded(event) {
-    this.removeClass('vjs-playing');
-    this.addClass('vjs-ended');
+    this.removeClass('dk-vjs-playing');
+    this.addClass('dk-vjs-ended');
     // change the button text to "Replay"
     this.controlText('Replay');
 

@@ -1,4 +1,4 @@
-.video-js .vjs-slider {
+.dk-video-js .dk-vjs-slider {
   position: relative;
   cursor: pointer;
   padding: 0;
@@ -9,11 +9,11 @@
   @include background-color-with-alpha($secondary-background-color, $secondary-background-transparency);
  }
 
-.video-js .vjs-slider.disabled {
+.dk-video-js .dk-vjs-slider.disabled {
   cursor: default;
 }
 
-.video-js .vjs-slider:focus {
+.dk-video-js .dk-vjs-slider:focus {
   text-shadow: 0em 0em 1em rgba($primary-foreground-color, 1);
 
   @include box-shadow(0 0 1em $primary-foreground-color);

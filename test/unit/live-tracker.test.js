@@ -20,7 +20,7 @@ QUnit.module('LiveTracker', () => {
 
     this.player.duration(Infinity);
 
-    assert.ok(this.player.hasClass('vjs-liveui'), 'has vjs-liveui');
+    assert.ok(this.player.hasClass('dk-vjs-liveui'), 'has dk-vjs-liveui');
     assert.ok(this.player.liveTracker.isTracking(), 'is tracking');
   });
 
@@ -30,7 +30,7 @@ QUnit.module('LiveTracker', () => {
 
     this.player.duration(Infinity);
 
-    assert.notOk(this.player.hasClass('vjs-liveui'), 'does not have vjs-iveui');
+    assert.notOk(this.player.hasClass('dk-vjs-liveui'), 'does not have dk-vjs-iveui');
     assert.notOk(this.player.liveTracker.isTracking(), 'is not tracking');
   });
 
@@ -40,7 +40,7 @@ QUnit.module('LiveTracker', () => {
 
     this.player.duration(Infinity);
 
-    assert.notOk(this.player.hasClass('vjs-liveui'), 'does not have vjs-liveui');
+    assert.notOk(this.player.hasClass('dk-vjs-liveui'), 'does not have dk-vjs-liveui');
     assert.ok(this.player.liveTracker.isTracking(), 'is tracking');
   });
 
@@ -50,7 +50,7 @@ QUnit.module('LiveTracker', () => {
 
     this.player.duration(Infinity);
 
-    assert.notOk(this.player.hasClass('vjs-liveui'), 'does not have vjs-liveui');
+    assert.notOk(this.player.hasClass('dk-vjs-liveui'), 'does not have dk-vjs-liveui');
     assert.notOk(this.player.liveTracker.isTracking(), 'is not tracking');
   });
 
@@ -260,7 +260,7 @@ QUnit.module('LiveTracker', () => {
     };
 
     this.liveTracker.seekToLiveEdge();
-    assert.notOk(this.player.hasClass('vjs-waiting'), 'player should not be waiting');
+    assert.notOk(this.player.hasClass('dk-vjs-waiting'), 'player should not be waiting');
     assert.equal(pauseCalls, 0, 'should not have called pause');
 
     this.clock.tick(2010);

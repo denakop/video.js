@@ -393,7 +393,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Base UI Component class\n* Components are embeddable UI objects that are represented by both a\n* javascript object and an element in the DOM. They can be children of other\n* components, and can have many children themselves.\n* ```js\n*     // adding a button to the player\n*     var button = player.addChild('button');\n*     button.el(); // -> button element\n* ```\n* ```html\n*     <div class=\"video-js\">\n*       <div class=\"vjs-button\">Button</div>\n*     </div>\n* ```\n* Components are also event emitters.\n* ```js\n*     button.on('click', function(){\n*       console.log('Button Clicked!');\n*     });\n*     button.trigger('customevent');\n* ```\n*\n* @param {Object} player  Main Player\n* @param {Object=} options Object of option names and values\n* @param {Function=} ready    Ready callback function\n* @class Component\n*/",
+        "comment": "/**\n* Base UI Component class\n* Components are embeddable UI objects that are represented by both a\n* javascript object and an element in the DOM. They can be children of other\n* components, and can have many children themselves.\n* ```js\n*     // adding a button to the player\n*     var button = player.addChild('button');\n*     button.el(); // -> button element\n* ```\n* ```html\n*     <div class=\"dk-video-js\">\n*       <div class=\"dk-vjs-button\">Button</div>\n*     </div>\n* ```\n* Components are also event emitters.\n* ```js\n*     button.on('click', function(){\n*       console.log('Button Clicked!');\n*     });\n*     button.trigger('customevent');\n* ```\n*\n* @param {Object} player  Main Player\n* @param {Object=} options Object of option names and values\n* @param {Function=} ready    Ready callback function\n* @class Component\n*/",
         "meta": {
             "range": [
                 116,
@@ -404,7 +404,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src",
             "code": {}
         },
-        "description": "<p>Base UI Component class\nComponents are embeddable UI objects that are represented by both a\njavascript object and an element in the DOM. They can be children of other\ncomponents, and can have many children themselves.</p>\n<pre class=\"prettyprint source lang-js\"><code>    // adding a button to the player\n    var button = player.addChild('button');\n    button.el(); // -> button element</code></pre><pre class=\"prettyprint source lang-html\"><code>    &lt;div class=&quot;video-js&quot;>\n      &lt;div class=&quot;vjs-button&quot;>Button&lt;/div>\n    &lt;/div></code></pre><p>Components are also event emitters.</p>\n<pre class=\"prettyprint source lang-js\"><code>    button.on('click', function(){\n      console.log('Button Clicked!');\n    });\n    button.trigger('customevent');</code></pre>",
+        "description": "<p>Base UI Component class\nComponents are embeddable UI objects that are represented by both a\njavascript object and an element in the DOM. They can be children of other\ncomponents, and can have many children themselves.</p>\n<pre class=\"prettyprint source lang-js\"><code>    // adding a button to the player\n    var button = player.addChild('button');\n    button.el(); // -> button element</code></pre><pre class=\"prettyprint source lang-html\"><code>    &lt;div class=&quot;dk-video-js&quot;>\n      &lt;div class=&quot;dk-vjs-button&quot;>Button&lt;/div>\n    &lt;/div></code></pre><p>Components are also event emitters.</p>\n<pre class=\"prettyprint source lang-js\"><code>    button.on('click', function(){\n      console.log('Button Clicked!');\n    });\n    button.trigger('customevent');</code></pre>",
         "params": [
             {
                 "type": {
@@ -2408,7 +2408,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Add the vjs-playing class to the element so it can change appearance\n*\n* @method handlePlay\n*/",
+        "comment": "/**\n* Add the dk-vjs-playing class to the element so it can change appearance\n*\n* @method handlePlay\n*/",
         "meta": {
             "range": [
                 456,
@@ -2419,14 +2419,14 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src/control-bar",
             "code": {}
         },
-        "description": "<p>Add the vjs-playing class to the element so it can change appearance</p>",
+        "description": "<p>Add the dk-vjs-playing class to the element so it can change appearance</p>",
         "kind": "function",
         "name": "handlePlay",
         "longname": "handlePlay",
         "scope": "global"
     },
     {
-        "comment": "/**\n* Add the vjs-paused class to the element so it can change appearance\n*\n* @method handlePause\n*/",
+        "comment": "/**\n* Add the dk-vjs-paused class to the element so it can change appearance\n*\n* @method handlePause\n*/",
         "meta": {
             "range": [
                 575,
@@ -2437,7 +2437,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src/control-bar",
             "code": {}
         },
-        "description": "<p>Add the vjs-paused class to the element so it can change appearance</p>",
+        "description": "<p>Add the dk-vjs-paused class to the element so it can change appearance</p>",
         "kind": "function",
         "name": "handlePause",
         "longname": "handlePause",
@@ -6254,7 +6254,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Add/remove the vjs-fluid class\n*\n* @param {Boolean} bool Value of true adds the class, value of false removes the class \n* @method fluid\n*/",
+        "comment": "/**\n* Add/remove the dk-vjs-fluid class\n*\n* @param {Boolean} bool Value of true adds the class, value of false removes the class \n* @method fluid\n*/",
         "meta": {
             "range": [
                 2748,
@@ -6265,7 +6265,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src",
             "code": {}
         },
-        "description": "<p>Add/remove the vjs-fluid class</p>",
+        "description": "<p>Add/remove the dk-vjs-fluid class</p>",
         "params": [
             {
                 "type": {
@@ -6484,7 +6484,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Add/remove the vjs-has-started class\n*\n* @param {Boolean} hasStarted The value of true adds the class the value of false remove the class\n* @return {Boolean} Boolean value if has started\n* @method hasStarted\n*/",
+        "comment": "/**\n* Add/remove the dk-vjs-has-started class\n*\n* @param {Boolean} hasStarted The value of true adds the class the value of false remove the class\n* @return {Boolean} Boolean value if has started\n* @method hasStarted\n*/",
         "meta": {
             "range": [
                 4838,
@@ -6495,7 +6495,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src",
             "code": {}
         },
-        "description": "<p>Add/remove the vjs-has-started class</p>",
+        "description": "<p>Add/remove the dk-vjs-has-started class</p>",
         "params": [
             {
                 "type": {
@@ -9957,7 +9957,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* @file flash.js \n* VideoJS-SWF - Custom Flash Player with HTML5-ish API\n* https://github.com/zencoder/video-js-swf\n* Not using setupTriggers. Using global onEvent func to distribute events\n*/",
+        "comment": "/**\n* @file flash.js \n* VideoJS-SWF - Custom Flash Player with HTML5-ish API\n* https://github.com/zencoder/dk-video-js-swf\n* Not using setupTriggers. Using global onEvent func to distribute events\n*/",
         "meta": {
             "range": [
                 0,
@@ -9970,7 +9970,7 @@ var docData =
         },
         "name": "tech/flash.js",
         "kind": "file",
-        "description": "<p>flash.js \nVideoJS-SWF - Custom Flash Player with HTML5-ish API\nhttps://github.com/zencoder/video-js-swf\nNot using setupTriggers. Using global onEvent func to distribute events</p>",
+        "description": "<p>flash.js \nVideoJS-SWF - Custom Flash Player with HTML5-ish API\nhttps://github.com/zencoder/dk-video-js-swf\nNot using setupTriggers. Using global onEvent func to distribute events</p>",
         "preserveName": true,
         "longname": "tech/flash.js",
         "scope": "global"
@@ -12803,7 +12803,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Get texttrack settings \n* Settings are\n* .vjs-edge-style\n* .vjs-font-family\n* .vjs-fg-color\n* .vjs-text-opacity\n* .vjs-bg-color\n* .vjs-bg-opacity\n* .window-color\n* .vjs-window-opacity \n*\n* @return {Object} \n* @method getValues\n*/",
+        "comment": "/**\n* Get texttrack settings \n* Settings are\n* .dk-vjs-edge-style\n* .dk-vjs-font-family\n* .dk-vjs-fg-color\n* .dk-vjs-text-opacity\n* .dk-vjs-bg-color\n* .dk-vjs-bg-opacity\n* .window-color\n* .dk-vjs-window-opacity \n*\n* @return {Object} \n* @method getValues\n*/",
         "meta": {
             "range": [
                 489,
@@ -12814,7 +12814,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src/tracks",
             "code": {}
         },
-        "description": "<p>Get texttrack settings \nSettings are\n.vjs-edge-style\n.vjs-font-family\n.vjs-fg-color\n.vjs-text-opacity\n.vjs-bg-color\n.vjs-bg-opacity\n.window-color\n.vjs-window-opacity</p>",
+        "description": "<p>Get texttrack settings \nSettings are\n.dk-vjs-edge-style\n.dk-vjs-font-family\n.dk-vjs-fg-color\n.dk-vjs-text-opacity\n.dk-vjs-bg-color\n.dk-vjs-bg-opacity\n.window-color\n.dk-vjs-window-opacity</p>",
         "returns": [
             {
                 "type": {
@@ -12830,7 +12830,7 @@ var docData =
         "scope": "global"
     },
     {
-        "comment": "/**\n* Set texttrack settings \n* Settings are\n* .vjs-edge-style\n* .vjs-font-family\n* .vjs-fg-color\n* .vjs-text-opacity\n* .vjs-bg-color\n* .vjs-bg-opacity\n* .window-color\n* .vjs-window-opacity \n*\n* @param {Object} values Object with texttrack setting values\n* @method setValues\n*/",
+        "comment": "/**\n* Set texttrack settings \n* Settings are\n* .dk-vjs-edge-style\n* .dk-vjs-font-family\n* .dk-vjs-fg-color\n* .dk-vjs-text-opacity\n* .dk-vjs-bg-color\n* .dk-vjs-bg-opacity\n* .window-color\n* .dk-vjs-window-opacity \n*\n* @param {Object} values Object with texttrack setting values\n* @method setValues\n*/",
         "meta": {
             "range": [
                 821,
@@ -12841,7 +12841,7 @@ var docData =
             "path": "/Users/mboles/git/BCL-LearningSamples/grunt-shell/videojs-src/tracks",
             "code": {}
         },
-        "description": "<p>Set texttrack settings \nSettings are\n.vjs-edge-style\n.vjs-font-family\n.vjs-fg-color\n.vjs-text-opacity\n.vjs-bg-color\n.vjs-bg-opacity\n.window-color\n.vjs-window-opacity</p>",
+        "description": "<p>Set texttrack settings \nSettings are\n.dk-vjs-edge-style\n.dk-vjs-font-family\n.dk-vjs-fg-color\n.dk-vjs-text-opacity\n.dk-vjs-bg-color\n.dk-vjs-bg-opacity\n.window-color\n.dk-vjs-window-opacity</p>",
         "params": [
             {
                 "type": {

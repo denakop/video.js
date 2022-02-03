@@ -18,7 +18,7 @@ class CustomControlSpacer extends Spacer {
    *         The DOM `className` for this object.
    */
   buildCSSClass() {
-    return `vjs-custom-control-spacer ${super.buildCSSClass()}`;
+    return `dk-vjs-custom-control-spacer ${super.buildCSSClass()}`;
   }
 
   /**

@@ -35,7 +35,7 @@ class ErrorDisplay extends ModalDialog {
    * @deprecated Since version 5.
    */
   buildCSSClass() {
-    return `vjs-error-display ${super.buildCSSClass()}`;
+    return `dk-vjs-error-display ${super.buildCSSClass()}`;
   }
 
   /**

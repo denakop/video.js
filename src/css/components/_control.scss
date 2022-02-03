@@ -1,7 +1,7 @@
-// vjs-control might be better named vjs-button now.
+// dk-vjs-control might be better named dk-vjs-button now.
 // It's used on both real buttons (play button)
 // and div buttons (menu buttons)
-.video-js .vjs-control {
+.dk-video-js .dk-vjs-control {
   position: relative;
   text-align: center;
   margin: 0;
@@ -11,30 +11,30 @@
   @include flex(none);
 
 }
-.vjs-button > .vjs-icon-placeholder:before {
+.dk-vjs-button > .dk-vjs-icon-placeholder:before {
   font-size: 1.8em;
   line-height: 1.67;
 
   @extend %icon-default;
 }
 
-.vjs-button > .vjs-icon-placeholder {
+.dk-vjs-button > .dk-vjs-icon-placeholder {
     display: block;
 }
 
 // Replacement for focus outline
-.video-js .vjs-control:focus:before,
-.video-js .vjs-control:hover:before,
-.video-js .vjs-control:focus {
+.dk-video-js .dk-vjs-control:focus:before,
+.dk-video-js .dk-vjs-control:hover:before,
+.dk-video-js .dk-vjs-control:focus {
   text-shadow: 0em 0em 1em rgba($primary-foreground-color, 1);
 }
 
 // Hide control text visually, but have it available for screenreaders
-.video-js .vjs-control-text {
+.dk-video-js .dk-vjs-control-text {
   @include hide-visually;
 }
 
-.vjs-no-flex .vjs-control {
+.dk-vjs-no-flex .dk-vjs-control {
   display: table-cell;
   vertical-align: middle;
 }

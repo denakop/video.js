@@ -22,7 +22,7 @@ const autoSetup = function() {
 
   const vids = Array.prototype.slice.call(document.getElementsByTagName('video'));
   const audios = Array.prototype.slice.call(document.getElementsByTagName('audio'));
-  const divs = Array.prototype.slice.call(document.getElementsByTagName('video-js'));
+  const divs = Array.prototype.slice.call(document.getElementsByTagName('dk-video-js'));
   const mediaEls = vids.concat(audios, divs);
 
   // Check if any media elements exist

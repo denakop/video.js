@@ -18,32 +18,32 @@
 // - Volume Mute button
 // - Fullscreen Button
 //
-.video-js {
+.dk-video-js {
 
-  &.vjs-layout-small,
-  &.vjs-layout-x-small,
-  &.vjs-layout-tiny {
-    .vjs-current-time,
-    .vjs-time-divider,
-    .vjs-duration,
-    .vjs-remaining-time,
-    .vjs-playback-rate,
-    .vjs-chapters-button,
-    .vjs-descriptions-button,
-    .vjs-captions-button,
-    .vjs-subtitles-button,
-    .vjs-audio-button,
-    .vjs-volume-control {
+  &.dk-vjs-layout-small,
+  &.dk-vjs-layout-x-small,
+  &.dk-vjs-layout-tiny {
+    .dk-vjs-current-time,
+    .dk-vjs-time-divider,
+    .dk-vjs-duration,
+    .dk-vjs-remaining-time,
+    .dk-vjs-playback-rate,
+    .dk-vjs-chapters-button,
+    .dk-vjs-descriptions-button,
+    .dk-vjs-captions-button,
+    .dk-vjs-subtitles-button,
+    .dk-vjs-audio-button,
+    .dk-vjs-volume-control {
       display: none;
     }
 
     // Reset the size of the volume panel to the default so we don't see a big
     // empty space to the right of the mute button.
-    .vjs-volume-panel.vjs-volume-panel-horizontal {
+    .dk-vjs-volume-panel.dk-vjs-volume-panel-horizontal {
       &:hover,
       &:active,
-      &.vjs-slider-active,
-      &.vjs-hover {
+      &.dk-vjs-slider-active,
+      &.dk-vjs-hover {
         width: auto;
         width: initial;
       }
@@ -51,10 +51,10 @@
   }
 
   // Hide the subs-caps button for non-Live UI "x-small" and for "tiny" players.
-  &.vjs-layout-x-small:not(.vjs-liveui),
-  &.vjs-layout-x-small:not(.vjs-live),
-  &.vjs-layout-tiny {
-    .vjs-subs-caps-button {
+  &.dk-vjs-layout-x-small:not(.dk-vjs-liveui),
+  &.dk-vjs-layout-x-small:not(.dk-vjs-live),
+  &.dk-vjs-layout-tiny {
+    .dk-vjs-subs-caps-button {
       display: none;
     }
   }
@@ -62,19 +62,19 @@
   // With the new Live UI, we can have the same treatment as "tiny". At
   // "x-small", the Live UI makes the progress control very small and almost
   // useless.
-  &.vjs-layout-x-small.vjs-liveui,
-  &.vjs-layout-tiny {
+  &.dk-vjs-layout-x-small.dk-vjs-liveui,
+  &.dk-vjs-layout-tiny {
 
-    .vjs-custom-control-spacer {
+    .dk-vjs-custom-control-spacer {
       @include flex(auto);
       display: block;
     }
 
-    &.vjs-no-flex .vjs-custom-control-spacer {
+    &.dk-vjs-no-flex .dk-vjs-custom-control-spacer {
       width: auto;
     }
 
-    .vjs-progress-control {
+    .dk-vjs-progress-control {
       display: none;
     }
   }

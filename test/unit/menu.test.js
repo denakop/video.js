@@ -55,7 +55,7 @@ QUnit.test('should not include menu title in hide threshold', function(assert) {
   menuButton.createItems = () => [new MenuItem(player, { label: 'menu-item1' })];
   menuButton.update();
 
-  assert.strictEqual(menuButton.hasClass('vjs-hidden'), false, 'menu button with single (non-title) item is not hidden');
+  assert.strictEqual(menuButton.hasClass('dk-vjs-hidden'), false, 'menu button with single (non-title) item is not hidden');
 
   menuButton.dispose();
   player.dispose();
@@ -74,27 +74,27 @@ QUnit.test('clicking should display the menu', function(assert) {
 
   assert.ok(menuButton.menu !== undefined, 'menu is created');
 
-  assert.equal(menuButton.menu.hasClass('vjs-lock-showing'), false, 'menu defaults to hidden');
+  assert.equal(menuButton.menu.hasClass('dk-vjs-lock-showing'), false, 'menu defaults to hidden');
 
   Events.trigger(el, 'click');
 
-  assert.equal(menuButton.menu.hasClass('vjs-lock-showing'), true, 'clicking on the menu button shows the menu');
+  assert.equal(menuButton.menu.hasClass('dk-vjs-lock-showing'), true, 'clicking on the menu button shows the menu');
 
   Events.trigger(el, 'click');
 
-  assert.equal(menuButton.menu.hasClass('vjs-lock-showing'), false, 'clicking again on the menu button hides the menu');
+  assert.equal(menuButton.menu.hasClass('dk-vjs-lock-showing'), false, 'clicking again on the menu button hides the menu');
 
   menuButton.disable();
 
   Events.trigger(el, 'click');
 
-  assert.equal(menuButton.menu.hasClass('vjs-lock-showing'), false, 'disable() prevents clicking from showing the menu');
+  assert.equal(menuButton.menu.hasClass('dk-vjs-lock-showing'), false, 'disable() prevents clicking from showing the menu');
 
   menuButton.enable();
 
   Events.trigger(el, 'click');
 
-  assert.equal(menuButton.menu.hasClass('vjs-lock-showing'), true, 'enable() allows clicking to show the menu');
+  assert.equal(menuButton.menu.hasClass('dk-vjs-lock-showing'), true, 'enable() allows clicking to show the menu');
 
   menuButton.dispose();
   player.dispose();

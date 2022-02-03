@@ -124,7 +124,7 @@ export default cliargs => [
     output: {
       format: 'umd',
       file: 'dist/video.js',
-      name: 'videojs',
+      name: 'dkVideojs',
       banner,
       globals: globals.browser
     },

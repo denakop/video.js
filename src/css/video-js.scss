@@ -2,7 +2,7 @@
 @import "private-variables";
 @import "utilities";
 
-@import "node_modules/videojs-font/scss/icons";
+@import "./components/videojs-font/scss/icons";
 
 @import "components/layout";
 @import "components/big-play";
@@ -44,7 +44,7 @@
 
 @import "print";
 
-.vjs-resize-manager {
+.dk-vjs-resize-manager {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,10 +55,10 @@
 }
 
 // The rule is needed for :focus-visible polyfill
-.js-focus-visible .video-js *:focus:not(.focus-visible) {
+.js-focus-visible .dk-video-js *:focus:not(.focus-visible) {
   outline: none;
 }
 
-.video-js *:focus:not(:focus-visible) {
+.dk-video-js *:focus:not(:focus-visible) {
   outline: none;
 }

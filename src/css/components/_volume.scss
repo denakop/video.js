@@ -1,32 +1,32 @@
-.video-js .vjs-mute-control {
+.dk-video-js .dk-vjs-mute-control {
   cursor: pointer;
   @include flex(none);
 
-  & .vjs-icon-placeholder {
-    @extend .vjs-icon-volume-high;
+  & .dk-vjs-icon-placeholder {
+    @extend .dk-vjs-icon-volume-high;
   }
 }
 
-.video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder {
-  @extend .vjs-icon-volume-mute;
+.dk-video-js .dk-vjs-mute-control.dk-vjs-vol-0 .dk-vjs-icon-placeholder {
+  @extend .dk-vjs-icon-volume-mute;
 }
-.video-js .vjs-mute-control.vjs-vol-1 .vjs-icon-placeholder {
-  @extend .vjs-icon-volume-low;
+.dk-video-js .dk-vjs-mute-control.dk-vjs-vol-1 .dk-vjs-icon-placeholder {
+  @extend .dk-vjs-icon-volume-low;
 }
-.video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder {
-  @extend .vjs-icon-volume-mid;
+.dk-video-js .dk-vjs-mute-control.dk-vjs-vol-2 .dk-vjs-icon-placeholder {
+  @extend .dk-vjs-icon-volume-mid;
 }
 
-.video-js .vjs-volume-control {
+.dk-video-js .dk-vjs-volume-control {
   cursor: pointer;
   margin-right: 1em;
   @include display-flex;
 }
-.video-js .vjs-volume-control.vjs-volume-horizontal {
+.dk-video-js .dk-vjs-volume-control.dk-vjs-volume-horizontal {
   width: 5em;
 }
 
-.video-js .vjs-volume-panel .vjs-volume-control {
+.dk-video-js .dk-vjs-volume-panel .dk-vjs-volume-control {
   visibility: visible;
   opacity: 0;
   width: 1px;
@@ -34,14 +34,14 @@
   margin-left: -1px;
 }
 
-.video-js .vjs-volume-panel {
-  &.vjs-hover .vjs-volume-control,
-  &:active .vjs-volume-control,
-  &:focus  .vjs-volume-control,
-  & .vjs-volume-control:active,
-  &.vjs-hover .vjs-mute-control  ~ .vjs-volume-control,
-  & .vjs-volume-control.vjs-slider-active {
-    &.vjs-volume-horizontal {
+.dk-video-js .dk-vjs-volume-panel {
+  &.dk-vjs-hover .dk-vjs-volume-control,
+  &:active .dk-vjs-volume-control,
+  &:focus  .dk-vjs-volume-control,
+  & .dk-vjs-volume-control:active,
+  &.dk-vjs-hover .dk-vjs-mute-control  ~ .dk-vjs-volume-control,
+  & .dk-vjs-volume-control.dk-vjs-slider-active {
+    &.dk-vjs-volume-horizontal {
       width: 5em;
       height: 3em;
       margin-right: 0;
@@ -50,7 +50,7 @@
     opacity: 1;
     position: relative;
 
-    &.vjs-volume-vertical {
+    &.dk-vjs-volume-vertical {
       left: -3.5em;
       @include transition(left 0s);
     }
@@ -58,15 +58,15 @@
     @include transition($transition-property);
   }
 
-  &.vjs-volume-panel-horizontal {
-    &.vjs-hover,
+  &.dk-vjs-volume-panel-horizontal {
+    &.dk-vjs-hover,
     &:active,
-    &.vjs-slider-active {
+    &.dk-vjs-slider-active {
       width: 10em;
 
       @include transition(width 0.1s);
     }
-    &.vjs-mute-toggle-only {
+    &.dk-vjs-mute-toggle-only {
       width: 4em;
     }
   }
@@ -74,7 +74,7 @@
   @include transition(width 1s);
 }
 
-.video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
+.dk-video-js .dk-vjs-volume-panel .dk-vjs-volume-control.dk-vjs-volume-vertical {
   height: 8em;
   width: 3em;
   left: -3000em;
@@ -83,12 +83,12 @@
   @include transition($transition-property)
 }
 
-.video-js .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
+.dk-video-js .dk-vjs-volume-panel .dk-vjs-volume-control.dk-vjs-volume-horizontal {
   $transition-property: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
   @include transition($transition-property)
 }
 
-.video-js.vjs-no-flex .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
+.dk-video-js.dk-vjs-no-flex .dk-vjs-volume-panel .dk-vjs-volume-control.dk-vjs-volume-horizontal {
   width: 5em;
   height: 3em;
 
@@ -99,40 +99,40 @@
   @include transition(none);
 }
 
-.video-js.vjs-no-flex .vjs-volume-control.vjs-volume-vertical,
-.video-js.vjs-no-flex .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
+.dk-video-js.dk-vjs-no-flex .dk-vjs-volume-control.dk-vjs-volume-vertical,
+.dk-video-js.dk-vjs-no-flex .dk-vjs-volume-panel .dk-vjs-volume-control.dk-vjs-volume-vertical {
   position: absolute;
   bottom: 3em;
   left: 0.5em;
 }
 
-.video-js .vjs-volume-panel {
+.dk-video-js .dk-vjs-volume-panel {
   @include display-flex;
 }
 
-.video-js .vjs-volume-bar {
+.dk-video-js .dk-vjs-volume-bar {
   margin: 1.35em 0.45em;
 }
 
-.vjs-volume-bar.vjs-slider-horizontal {
+.dk-vjs-volume-bar.dk-vjs-slider-horizontal {
   width: 5em;
   height: 0.3em;
 }
 
-.vjs-volume-bar.vjs-slider-vertical {
+.dk-vjs-volume-bar.dk-vjs-slider-vertical {
   width: 0.3em;
   height: 5em;
   margin: 1.35em auto;
 }
 
-.video-js .vjs-volume-level {
+.dk-video-js .dk-vjs-volume-level {
   position: absolute;
   bottom: 0;
   left: 0;
 
   background-color: $primary-foreground-color;
 
-  @extend .vjs-icon-circle;
+  @extend .dk-vjs-icon-circle;
 
   // Volume handle
   &:before {
@@ -142,7 +142,7 @@
   }
 }
 
-.vjs-slider-vertical .vjs-volume-level {
+.dk-vjs-slider-vertical .dk-vjs-volume-level {
   width: 0.3em;
 
   // Volume handle
@@ -152,7 +152,7 @@
     z-index: 1;
   }
 }
-.vjs-slider-horizontal .vjs-volume-level {
+.dk-vjs-slider-horizontal .dk-vjs-volume-level {
   height: 0.3em;
 
   // Volume handle
@@ -162,20 +162,20 @@
   }
 }
 
-.video-js .vjs-volume-panel.vjs-volume-panel-vertical {
+.dk-video-js .dk-vjs-volume-panel.dk-vjs-volume-panel-vertical {
   width: 4em;
 }
 
 // Assumes volume starts at 1.0.
-.vjs-volume-bar.vjs-slider-vertical .vjs-volume-level {
+.dk-vjs-volume-bar.dk-vjs-slider-vertical .dk-vjs-volume-level {
   height: 100%;
 }
 
-.vjs-volume-bar.vjs-slider-horizontal .vjs-volume-level {
+.dk-vjs-volume-bar.dk-vjs-slider-horizontal .dk-vjs-volume-level {
   width: 100%;
 }
 
-.video-js .vjs-volume-vertical {
+.dk-video-js .dk-vjs-volume-vertical {
   width: 3em;
   height: 8em;
   bottom: 8em;
@@ -183,17 +183,17 @@
   @include background-color-with-alpha($primary-background-color, $primary-background-transparency);
 }
 
-.video-js .vjs-volume-horizontal .vjs-menu {
+.dk-video-js .dk-vjs-volume-horizontal .dk-vjs-menu {
   left: -2em;
 }
 
-// .vjs-volume-tooltip
+// .dk-vjs-volume-tooltip
 //
 // These elements are displayed above the volume bar.
 //
 // By default, they are hidden and only shown when hovering over the volume
 // control.
-.video-js .vjs-volume-tooltip {
+.dk-video-js .dk-vjs-volume-tooltip {
   @include background-color-with-alpha(#fff, 0.8);
   @include border-radius(0.3em);
   color: #000;
@@ -208,28 +208,28 @@
   z-index: 1;
 }
 
-.video-js .vjs-volume-control:hover .vjs-volume-tooltip,
-.video-js .vjs-volume-control:hover .vjs-progress-holder:focus .vjs-volume-tooltip {
+.dk-video-js .dk-vjs-volume-control:hover .dk-vjs-volume-tooltip,
+.dk-video-js .dk-vjs-volume-control:hover .dk-vjs-progress-holder:focus .dk-vjs-volume-tooltip {
   display: block;
   font-size: 1em;
   visibility: visible;
 }
 
-.video-js .vjs-volume-vertical:hover .vjs-volume-tooltip,
-.video-js .vjs-volume-vertical:hover .vjs-progress-holder:focus .vjs-volume-tooltip {
+.dk-video-js .dk-vjs-volume-vertical:hover .dk-vjs-volume-tooltip,
+.dk-video-js .dk-vjs-volume-vertical:hover .dk-vjs-progress-holder:focus .dk-vjs-volume-tooltip {
   left: 1em;
   top: -12px;
 }
 
-.video-js .vjs-volume-control.disabled:hover .vjs-volume-tooltip {
+.dk-video-js .dk-vjs-volume-control.disabled:hover .dk-vjs-volume-tooltip {
   font-size: 1em;
 }
 
-// .vjs-mouse-display / MouseVolumeLevelDisplay
+// .dk-vjs-mouse-display / MouseVolumeLevelDisplay
 //
 // This element tracks the mouse position along the volume control and
 // includes a tooltip, which displays the volume level.
-.video-js .vjs-volume-control .vjs-mouse-display {
+.dk-video-js .dk-vjs-volume-control .dk-vjs-mouse-display {
   display: none;
   position: absolute;
   width: 100%;
@@ -238,31 +238,31 @@
   z-index: 1;
 }
 
-.video-js .vjs-volume-horizontal .vjs-mouse-display {
+.dk-video-js .dk-vjs-volume-horizontal .dk-vjs-mouse-display {
   width: 1px;
   height: 100%;
 }
 
-.vjs-no-flex .vjs-volume-control .vjs-mouse-display {
+.dk-vjs-no-flex .dk-vjs-volume-control .dk-vjs-mouse-display {
   z-index: 0;
 }
 
-.video-js .vjs-volume-control:hover .vjs-mouse-display {
+.dk-video-js .dk-vjs-volume-control:hover .dk-vjs-mouse-display {
   display: block;
 }
 
-.video-js.vjs-user-inactive .vjs-volume-control .vjs-mouse-display {
+.dk-video-js.dk-vjs-user-inactive .dk-vjs-volume-control .dk-vjs-mouse-display {
   visibility: hidden;
   opacity: 0;
   $trans: visibility 1.0s, opacity 1.0s;
   @include transition($trans);
 }
 
-.video-js.vjs-user-inactive.vjs-no-flex .vjs-volume-control .vjs-mouse-display {
+.dk-video-js.dk-vjs-user-inactive.dk-vjs-no-flex .dk-vjs-volume-control .dk-vjs-mouse-display {
   display: none;
 }
 
-.vjs-mouse-display .vjs-volume-tooltip {
+.dk-vjs-mouse-display .dk-vjs-volume-tooltip {
   color: #fff;
   @include background-color-with-alpha(#000, 0.8);
 }

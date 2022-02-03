@@ -32,42 +32,42 @@ QUnit.test('liveui enabled, can switch between at and behind live edge ', functi
   this.mockLiveui();
 
   assert.notEqual(this.getComputedDisplay(), 'none', 'is not hidden');
-  assert.ok(this.seekToLive.hasClass('vjs-at-live-edge'), 'has at live edge class');
+  assert.ok(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'has at live edge class');
 
   this.player.currentTime = () => 0;
   this.player.seekable = () => createTimeRange(0, 38);
   this.clock.tick(30);
 
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 });
 
 QUnit.test('liveui enabled can show/hide on durationchange', function(assert) {
   // start out non-live
   assert.equal(this.getComputedDisplay(), 'none', 'is hidden');
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 
   // switch to live
   this.mockLiveui();
 
   assert.notEqual(this.getComputedDisplay(), 'none', 'is not hidden');
-  assert.ok(this.seekToLive.hasClass('vjs-at-live-edge'), 'has at live edge class');
+  assert.ok(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'has at live edge class');
 
   // switch to non-live
   this.player.duration(20);
 
   assert.equal(this.getComputedDisplay(), 'none', 'is hidden');
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 
   // back to live again.
   this.mockLiveui();
 
   assert.notEqual(this.getComputedDisplay(), 'none', 'is not hidden');
-  assert.ok(this.seekToLive.hasClass('vjs-at-live-edge'), 'has at live edge class');
+  assert.ok(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'has at live edge class');
 });
 
 QUnit.test('liveui disabled live window is never shown', function(assert) {
   assert.equal(this.getComputedDisplay(), 'none', 'is hidden');
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 
   this.player.paused = () => false;
   this.player.hasStarted = () => true;
@@ -78,7 +78,7 @@ QUnit.test('liveui disabled live window is never shown', function(assert) {
   this.player.duration(Infinity);
 
   assert.equal(this.getComputedDisplay(), 'none', 'is hidden');
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 
   this.player.duration(10);
 
@@ -88,5 +88,5 @@ QUnit.test('liveui disabled live window is never shown', function(assert) {
   this.player.duration(Infinity);
 
   assert.equal(this.getComputedDisplay(), 'none', 'is hidden');
-  assert.notOk(this.seekToLive.hasClass('vjs-at-live-edge'), 'does not have at live edge class');
+  assert.notOk(this.seekToLive.hasClass('dk-vjs-at-live-edge'), 'does not have at live edge class');
 });

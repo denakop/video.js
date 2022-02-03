@@ -473,7 +473,7 @@ function addMembersContent() {
                     itemWrapper.appendChild(itemHeader);
                     itemDescription = createEl('div', {id: item.name + 'Description', class: 'description'});
                     itemWrapper.appendChild(itemDescription);
-                    itemFooter = createEl('p', {class: 'vjs-only'});
+                    itemFooter = createEl('p', {class: 'dk-vjs-only'});
                     itemFooterLink = createEl('a', {href: docsPath + item.meta.filename + '#L' + item.meta.lineno});
                     itemFooterContent = createEl('em', {id: item.name + 'Footer'});
                     itemFooter.appendChild(itemFooterContent);

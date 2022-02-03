@@ -40,7 +40,7 @@ class ControlBar extends Component {
    */
   createEl() {
     return super.createEl('div', {
-      className: 'vjs-control-bar',
+      className: 'dk-vjs-control-bar',
       dir: 'ltr'
     });
   }

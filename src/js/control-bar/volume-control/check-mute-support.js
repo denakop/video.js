@@ -13,14 +13,14 @@
 const checkMuteSupport = function(self, player) {
   // hide mute toggle button if it's not supported by the current tech
   if (player.tech_ && !player.tech_.featuresMuteControl) {
-    self.addClass('vjs-hidden');
+    self.addClass('dk-vjs-hidden');
   }
 
   self.on(player, 'loadstart', function() {
     if (!player.tech_.featuresMuteControl) {
-      self.addClass('vjs-hidden');
+      self.addClass('dk-vjs-hidden');
     } else {
-      self.removeClass('vjs-hidden');
+      self.removeClass('dk-vjs-hidden');
     }
   });
 };

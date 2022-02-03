@@ -40,7 +40,7 @@ QUnit.test('should remove itself from the document flow when there is no poster'
   this.mockPlayer.poster_ = '';
   this.mockPlayer.trigger('posterchange');
   assert.equal(
-    posterImage.hasClass('vjs-hidden'),
+    posterImage.hasClass('dk-vjs-hidden'),
     true,
     'Poster image hides with an empty source'
   );
@@ -49,7 +49,7 @@ QUnit.test('should remove itself from the document flow when there is no poster'
   this.mockPlayer.poster_ = this.poster2;
   this.mockPlayer.trigger('posterchange');
   assert.equal(
-    posterImage.hasClass('vjs-hidden'),
+    posterImage.hasClass('dk-vjs-hidden'),
     false,
     'Poster image shows again when there is a source'
   );
@@ -71,14 +71,14 @@ QUnit.test('should hide the poster in the appropriate player states', function(a
   playerDiv.appendChild(el);
   fixture.appendChild(playerDiv);
 
-  playerDiv.className = 'video-js vjs-has-started';
+  playerDiv.className = 'dk-video-js dk-vjs-has-started';
   assert.equal(
     TestHelpers.getComputedStyle(el, 'display'),
     'none',
     'The poster hides when the video has started (CSS may not be loaded)'
   );
 
-  playerDiv.className = 'video-js vjs-has-started vjs-audio';
+  playerDiv.className = 'dk-video-js dk-vjs-has-started dk-vjs-audio';
   assert.equal(
     TestHelpers.getComputedStyle(el, 'display'),
     'block',

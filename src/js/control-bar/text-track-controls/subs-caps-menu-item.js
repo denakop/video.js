@@ -15,16 +15,16 @@ class SubsCapsMenuItem extends TextTrackMenuItem {
 
   createEl(type, props, attrs) {
     const el = super.createEl(type, props, attrs);
-    const parentSpan = el.querySelector('.vjs-menu-item-text');
+    const parentSpan = el.querySelector('.dk-vjs-menu-item-text');
 
     if (this.options_.track.kind === 'captions') {
       parentSpan.appendChild(createEl('span', {
-        className: 'vjs-icon-placeholder'
+        className: 'dk-vjs-icon-placeholder'
       }, {
         'aria-hidden': true
       }));
       parentSpan.appendChild(createEl('span', {
-        className: 'vjs-control-text',
+        className: 'dk-vjs-control-text',
         // space added as the text will visually flow with the
         // label
         textContent: ` ${this.localize('Captions')}`

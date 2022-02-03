@@ -25,7 +25,7 @@ QUnit.test('should be displayed when text tracks list is not empty', function(as
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-hidden'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-hidden'),
     'control is displayed'
   );
   assert.equal(player.textTracks().length, 1, 'textTracks contains one item');
@@ -39,7 +39,7 @@ QUnit.test('should be displayed when a text track is added to an empty track lis
   player.addRemoteTextTrack(track, true);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-hidden'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-hidden'),
     'control is displayed'
   );
   assert.equal(player.textTracks().length, 1, 'textTracks contains one item');
@@ -51,7 +51,7 @@ QUnit.test('should not be displayed when text tracks list is empty', function(as
   const player = TestHelpers.makePlayer();
 
   assert.ok(
-    player.controlBar.subsCapsButton.hasClass('vjs-hidden'),
+    player.controlBar.subsCapsButton.hasClass('dk-vjs-hidden'),
     'control is not displayed'
   );
   assert.equal(player.textTracks().length, 0, 'textTracks is empty');
@@ -67,7 +67,7 @@ QUnit.test('should not be displayed when last text track is removed', function(a
   player.removeRemoteTextTrack(player.textTracks()[0]);
 
   assert.ok(
-    player.controlBar.subsCapsButton.hasClass('vjs-hidden'),
+    player.controlBar.subsCapsButton.hasClass('dk-vjs-hidden'),
     'control is not displayed'
   );
   assert.equal(player.textTracks().length, 0, 'textTracks is empty');
@@ -173,7 +173,7 @@ QUnit.test('descriptions should be displayed when text tracks list is not empty'
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-hidden'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-hidden'),
     'descriptions control is displayed'
   );
   assert.equal(player.textTracks().length, 1, 'textTracks contains one item');
@@ -187,7 +187,7 @@ QUnit.test('descriptions should be displayed when a text track is added to an em
   player.addRemoteTextTrack(descriptionstrack, true);
 
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-hidden'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-hidden'),
     'control is displayed'
   );
   assert.equal(player.textTracks().length, 1, 'textTracks contains one item');
@@ -199,7 +199,7 @@ QUnit.test('descriptions should not be displayed when text tracks list is empty'
   const player = TestHelpers.makePlayer();
 
   assert.ok(
-    player.controlBar.descriptionsButton.hasClass('vjs-hidden'),
+    player.controlBar.descriptionsButton.hasClass('dk-vjs-hidden'),
     'control is not displayed'
   );
   assert.equal(player.textTracks().length, 0, 'textTracks is empty');
@@ -215,7 +215,7 @@ QUnit.test('descriptions should not be displayed when last text track is removed
   player.removeRemoteTextTrack(player.textTracks()[0]);
 
   assert.ok(
-    player.controlBar.descriptionsButton.hasClass('vjs-hidden'),
+    player.controlBar.descriptionsButton.hasClass('dk-vjs-hidden'),
     'control is not displayed'
   );
   assert.equal(player.textTracks().length, 0, 'textTracks is empty');
@@ -253,21 +253,21 @@ QUnit.test('enabling a captions track should disable the descriptions menu butto
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-hidden'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-hidden'),
     'captions control is displayed'
   );
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-hidden'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-hidden'),
     'descriptions control is displayed'
   );
   assert.equal(player.textTracks().length, 2, 'textTracks contains two items');
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-disabled'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-disabled'),
     'captions control is NOT disabled'
   );
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-disabled'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-disabled'),
     'descriptions control is NOT disabled'
   );
 
@@ -285,11 +285,11 @@ QUnit.test('enabling a captions track should disable the descriptions menu butto
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-disabled'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-disabled'),
     'captions control is NOT disabled'
   );
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-disabled'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-disabled'),
     'descriptions control is NOT disabled'
   );
 
@@ -307,11 +307,11 @@ QUnit.test('enabling a captions track should disable the descriptions menu butto
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-disabled'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-disabled'),
     'captions control is NOT disabled'
   );
   assert.ok(
-    player.controlBar.descriptionsButton.hasClass('vjs-disabled'),
+    player.controlBar.descriptionsButton.hasClass('dk-vjs-disabled'),
     'descriptions control IS disabled'
   );
 
@@ -329,11 +329,11 @@ QUnit.test('enabling a captions track should disable the descriptions menu butto
   this.clock.tick(1000);
 
   assert.ok(
-    !player.controlBar.subsCapsButton.hasClass('vjs-disabled'),
+    !player.controlBar.subsCapsButton.hasClass('dk-vjs-disabled'),
     'captions control is NOT disabled'
   );
   assert.ok(
-    !player.controlBar.descriptionsButton.hasClass('vjs-disabled'),
+    !player.controlBar.descriptionsButton.hasClass('dk-vjs-disabled'),
     'descriptions control is NOT disabled'
   );
 
@@ -376,7 +376,7 @@ const chaptersTrack = {
 QUnit.test('chapters should not be displayed when text tracks list is empty', function(assert) {
   const player = TestHelpers.makePlayer();
 
-  assert.ok(player.controlBar.chaptersButton.hasClass('vjs-hidden'), 'control is not displayed');
+  assert.ok(player.controlBar.chaptersButton.hasClass('dk-vjs-hidden'), 'control is not displayed');
   assert.equal(player.textTracks().length, 0, 'textTracks is empty');
 
   player.dispose();
@@ -389,7 +389,7 @@ QUnit.test('chapters should not be displayed when there is chapters track but no
 
   this.clock.tick(1000);
 
-  assert.ok(player.controlBar.chaptersButton.hasClass('vjs-hidden'), 'chapters menu is not displayed');
+  assert.ok(player.controlBar.chaptersButton.hasClass('dk-vjs-hidden'), 'chapters menu is not displayed');
   assert.equal(player.textTracks().length, 1, 'textTracks contains one item');
 
   player.dispose();
@@ -418,7 +418,7 @@ QUnit.test('chapters should be displayed when cues added to initial track and bu
 
   player.controlBar.chaptersButton.update();
 
-  assert.ok(!player.controlBar.chaptersButton.hasClass('vjs-hidden'), 'chapters menu is displayed');
+  assert.ok(!player.controlBar.chaptersButton.hasClass('dk-vjs-hidden'), 'chapters menu is displayed');
 
   const menuItems = player.controlBar.chaptersButton.items;
 
@@ -448,7 +448,7 @@ QUnit.test('chapters should be displayed when a track and its cures added and bu
 
   player.controlBar.chaptersButton.update();
 
-  assert.ok(!player.controlBar.chaptersButton.hasClass('vjs-hidden'), 'chapters menu is displayed');
+  assert.ok(!player.controlBar.chaptersButton.hasClass('dk-vjs-hidden'), 'chapters menu is displayed');
 
   const menuItems = player.controlBar.chaptersButton.items;
 
@@ -519,7 +519,7 @@ QUnit.test('chapters should be displayed when remote track added and load event 
     chaptersEl.trigger('load');
   }
 
-  assert.ok(!player.controlBar.chaptersButton.hasClass('vjs-hidden'), 'chapters menu is displayed');
+  assert.ok(!player.controlBar.chaptersButton.hasClass('dk-vjs-hidden'), 'chapters menu is displayed');
 
   const menuItems = player.controlBar.chaptersButton.items;
 
